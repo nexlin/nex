@@ -5,15 +5,15 @@ interface NexDivProps {
   direction?: "row" | "column";
   align?: "start" | "center" | "end" | "flex-end" | "flex-start" | "stretch";
   justify?:
-    | "start"
-    | "center"
-    | "end"
-    | "flex-end"
-    | "flex-start"
-    | "stretch"
-    | "space-between"
-    | "space-around"
-    | "space-evenly";
+  | "start"
+  | "center"
+  | "end"
+  | "flex-end"
+  | "flex-start"
+  | "stretch"
+  | "space-between"
+  | "space-around"
+  | "space-evenly";
   flex?: string;
   border?: string;
   borderTop?: string;
@@ -39,15 +39,15 @@ export const NexDiv = styled.div.withConfig({
   shouldForwardProp: (prop, defaultValidatorFn) =>
     isPropValid(prop) &&
     !["flex", "align", "direction", "justify", "bgColor", "gap"].includes(prop),
-})<NexDivProps>`
+}) <NexDivProps>`
   display: flex;
   flex-direction: ${(props) => props.direction || "row"};
   flex: ${(props) => props.flex || "0 1 auto"};
   border: ${(props) =>
     props.borderTop ||
-    props.borderBottom ||
-    props.borderLeft ||
-    props.borderRight
+      props.borderBottom ||
+      props.borderLeft ||
+      props.borderRight
       ? "none"
       : props.border || "none"};
   border-top: ${(props) => props.borderTop || props.border || "none"};
@@ -130,7 +130,7 @@ export const NexButton = styled.button.withConfig({
       "bgColor",
       "hoverBgColor",
     ].includes(prop),
-})<NexButtonProps>`
+}) <NexButtonProps>`
   background-color: ${(props) => props.bgColor || "#252525"};
   color: ${(props) => props.color || "#ffffff"};
   border: ${(props) => props.border || "1px solid transparent"};
@@ -187,15 +187,15 @@ export const NexInput = styled.input.withConfig({
       "bgColor",
       "hoverBgColor",
     ].includes(prop),
-})<NexInputProps>`
+}) <NexInputProps>`
   background-color: ${(props) => props.bgColor || "white"};
   color: ${(props) => props.color || "#117"};
   padding: ${(props) => props.padding || "0"};
   border: ${(props) =>
     props.borderTop ||
-    props.borderBottom ||
-    props.borderLeft ||
-    props.borderRight
+      props.borderBottom ||
+      props.borderLeft ||
+      props.borderRight
       ? "none"
       : props.border || `1px solid ${props.borderColor || "grey"}`};
   border-top: ${(props) => props.borderTop || "none"};
@@ -262,7 +262,7 @@ export const NexLabel = styled.label.withConfig({
       "bgColor",
       "hoverBgColor",
     ].includes(prop),
-})<NexLabelProps>`
+}) <NexLabelProps>`
   background-color: ${(props) => props.bgColor || "transparent"};
   color: ${(props) => props.color || "inherit"};
   font-size: ${(props) => props.fontSize || "inherit"};

@@ -136,3 +136,13 @@ venv/
 *.pyc
 .idea
 /agent/venv
+
+# build directories
+build/
+nex-ux-user/build/
+
+
+# build directories
+build/
+nex-ux-user/build/
+
