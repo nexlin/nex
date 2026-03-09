@@ -3,7 +3,7 @@
     0,
     "/admin",
     "",
-    "config",
+    "pm-config",
     {
       "0": {
         "name": "admin",
@@ -15,346 +15,9 @@
   ],
   [
     1,
-    "/cbm",
-    "",
-    "config",
-    {
-      "1": {
-        "name": "cbm",
-        "dispName": "CBM",
-        "description": "CBM 전용 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    3,
-    "/cbm/config",
-    "",
-    "config",
-    {
-      "0": {
-        "name": "config",
-        "dispName": "CBM",
-        "description": "CBM 전용 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    4,
-    "/cbm/status",
-    "",
-    "config",
-    {
-      "1": {
-        "name": "status",
-        "dispName": "상태",
-        "description": "상태 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    5,
-    "/cbm/event",
-    "",
-    "config",
-    {
-      "2": {
-        "name": "event",
-        "dispName": "이벤트",
-        "description": "이벤트 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    6,
-    "/cbm/history",
-    "",
-    "config",
-    {
-      "3": {
-        "name": "history",
-        "dispName": "이력",
-        "description": "이력 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    7,
-    "/cbm/config/Line",
-    "",
-    "config",
-    {
-      "0": {
-        "name": "Line",
-        "dispName": "노선정보",
-        "description": "노선정보",
-        "type": "element",
-        "format": "/cbm/config/Line",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    8,
-    "/cbm/config/TrainPerLine",
-    "",
-    "config",
-    {
-      "1": {
-        "name": "TrainPerLine",
-        "dispName": "노선별편성정보",
-        "description": "노선별 편성정보",
-        "type": "element",
-        "format": "/cbm/config/TrainPerLine",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    9,
-    "/cbm/config/CarPerTrain",
-    "",
-    "config",
-    {
-      "2": {
-        "name": "CarPerTrain",
-        "dispName": "편성별차량정보",
-        "description": "편성별차량정보",
-        "type": "element",
-        "format": "/cbm/config/CarPerTrain",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    10,
-    "/cbm/config/DevicePerCar",
-    "",
-    "config",
-    {
-      "3": {
-        "name": "DevicePerCar",
-        "dispName": "차량별장치정보",
-        "description": "차량별장치정보",
-        "type": "element",
-        "format": "/cbm/config/DevicePerCar",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    11,
-    "/cbm/status/LossPerLine",
-    "",
-    "config",
-    {
-      "0": {
-        "name": "LossPerLine",
-        "dispName": "노선별 열화 현황",
-        "description": "노선별 열화 현상 데이터 엘리먼 트",
-        "type": "element",
-        "format": "/cbm/status/AlertCount",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    12,
-    "/cbm/status/LossPerDevice",
-    "",
-    "config",
-    {
-      "1": {
-        "name": "LossPerDevice",
-        "dispName": "장치별 열화 현상",
-        "description": "장치치별 열화 현상 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/status/AlertCount",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    13,
-    "/cbm/status/TrainCountPerLine",
-    "",
-    "config",
-    {
-      "2": {
-        "name": "TrainCountPerLine",
-        "dispName": "노선별 편성 수",
-        "description": "노선별 편성 수 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/status/TrainCountPerLine",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    14,
-    "/cbm/event/RTMaintenanceInfo",
-    "",
-    "config",
-    {
-      "0": {
-        "name": "RTMaintenanceInfo",
-        "dispName": "실시간 유지보수 정보",
-        "description": "실시간 유지보 수 정보 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/event/RTMaintenanceInfo",
-        "store": "/disk/1year",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    15,
-    "/cbm/event/SystemEventInfo",
-    "",
-    "config",
-    {
-      "1": {
-        "name": "SystemEventInfo",
-        "dispName": "시스템 이벤트 정보",
-        "description": "시스템 이벤트 정보 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/event/SystemEventInfo",
-        "store": "/disk/1year",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    16,
-    "/cbm/history/LossHistoryPerLine",
-    "",
-    "config",
-    {
-      "0": {
-        "name": "LossHistoryPerLine",
-        "dispName": "노선별 열화 이력",
-        "description": "노선별 열화 이력 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/history/LossHistoryPerLine",
-        "store": "/disk/7day",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    17,
-    "/cbm/history/LossHistoryPerDevice",
-    "",
-    "config",
-    {
-      "1": {
-        "name": "LossHistoryPerDevice",
-        "dispName": "장치별 열화 이력",
-        "description": "장치치별 열화 이력 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/history/LossHistoryPerDevice",
-        "store": "/disk/7day",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    18,
-    "/cbm/history/MaintenanceHistoryPerLine",
-    "",
-    "config",
-    {
-      "2": {
-        "name": "MaintenanceHistoryPerLine",
-        "dispName": "노선별 유지보수 이력",
-        "description": "노선선별 유지보수 이력 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/history/MaintenanceHistoryPerLine",
-        "store": "/disk/1year",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    19,
-    "/cbm/history/DetailLossLevelHistory",
-    "",
-    "config",
-    {
-      "3": {
-        "name": "DetailLossLevelHistory",
-        "dispName": "상세 열화등급 이력",
-        "description": "상세 열화등급 이력 데이 터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/history/DetailLossLevelHistory",
-        "store": "/disk/1year",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": []
-      }
-    }
-  ],
-  [
-    21,
     "/admin/menu",
     "",
-    "config",
+    "pm-config",
     {
       "0": {
         "name": "menu",
@@ -372,10 +35,10 @@
     }
   ],
   [
-    22,
+    2,
     "/admin/storage",
     "",
-    "config",
+    "pm-config",
     {
       "1": {
         "name": "storage",
@@ -393,10 +56,10 @@
     }
   ],
   [
-    23,
+    3,
     "/admin/format",
     "",
-    "config",
+    "pm-config",
     {
       "2": {
         "name": "format",
@@ -414,10 +77,10 @@
     }
   ],
   [
-    24,
+    4,
     "/admin/store",
     "",
-    "config",
+    "pm-config",
     {
       "3": {
         "name": "store",
@@ -435,10 +98,10 @@
     }
   ],
   [
-    25,
+    5,
     "/admin/processor",
     "",
-    "config",
+    "pm-config",
     {
       "4": {
         "name": "processor",
@@ -456,10 +119,10 @@
     }
   ],
   [
-    26,
+    6,
     "/admin/system",
     "",
-    "config",
+    "pm-config",
     {
       "5": {
         "name": "system",
@@ -477,10 +140,10 @@
     }
   ],
   [
-    27,
+    7,
     "/admin/element",
     "",
-    "config",
+    "pm-config",
     {
       "6": {
         "name": "element",
@@ -498,10 +161,10 @@
     }
   ],
   [
-    28,
+    8,
     "/admin/contents",
     "",
-    "config",
+    "pm-config",
     {
       "7": {
         "name": "contents",
@@ -519,10 +182,10 @@
     }
   ],
   [
-    29,
+    9,
     "/admin/applet",
     "",
-    "config",
+    "pm-config",
     {
       "8": {
         "name": "applet",
@@ -542,10 +205,10 @@
     }
   ],
   [
-    30,
+    10,
     "/admin/section",
     "",
-    "config",
+    "pm-config",
     {
       "9": {
         "name": "section",
@@ -563,10 +226,10 @@
     }
   ],
   [
-    31,
+    11,
     "/admin/user",
     "",
-    "config",
+    "pm-config",
     {
       "10": {
         "name": "user",
@@ -584,10 +247,10 @@
     }
   ],
   [
-    32,
+    12,
     "/admin/theme",
     "",
-    "config",
+    "pm-config",
     {
       "11": {
         "name": "theme",
@@ -605,377 +268,12 @@
     }
   ],
   [
-    102,
-    "/cbm",
-    "",
-    "webclient",
-    {
-      "0": {
-        "name": "cbm",
-        "dispName": "CBM",
-        "description": "CBM 전용 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    103,
-    "/cbm/config",
-    "",
-    "webclient",
-    {
-      "0": {
-        "name": "config",
-        "dispName": "CBM",
-        "description": "CBM 전용 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    104,
-    "/cbm/config/Line",
-    "",
-    "webclient",
-    {
-      "0": {
-        "name": "Line",
-        "dispName": "노선정보",
-        "description": "노선정보",
-        "type": "element",
-        "format": "/cbm/config/Line",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/config/Line"
-        ]
-      }
-    }
-  ],
-  [
-    105,
-    "/cbm/config/TrainPerLine",
-    "",
-    "webclient",
-    {
-      "1": {
-        "name": "TrainPerLine",
-        "dispName": "노선별편성정보",
-        "description": "노선별 편성정보",
-        "type": "element",
-        "format": "/cbm/config/TrainPerLine",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/config/TrainPerLine"
-        ]
-      }
-    }
-  ],
-  [
-    106,
-    "/cbm/config/CarPerTrain",
-    "",
-    "webclient",
-    {
-      "2": {
-        "name": "CarPerTrain",
-        "dispName": "편성별차량정보",
-        "description": "편성별차량정보",
-        "type": "element",
-        "format": "/cbm/config/CarPerTrain",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/config/CarPerTrain"
-        ]
-      }
-    }
-  ],
-  [
-    107,
-    "/cbm/config/DevicePerCar",
-    "",
-    "webclient",
-    {
-      "3": {
-        "name": "DevicePerCar",
-        "dispName": "차량별장치정보",
-        "description": "차량별장치정보",
-        "type": "element",
-        "format": "/cbm/config/DevicePerCar",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/config/DevicePerCar"
-        ]
-      }
-    }
-  ],
-  [
-    108,
-    "/cbm/status",
-    "",
-    "webclient",
-    {
-      "1": {
-        "name": "status",
-        "dispName": "상태",
-        "description": "상태 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    109,
-    "/cbm/status/LossPerLine",
-    "",
-    "webclient",
-    {
-      "0": {
-        "name": "LossPerLine",
-        "dispName": "노선별 열화 현황",
-        "description": "노선별 열화 현상 데이터 엘리먼 트",
-        "type": "element",
-        "format": "/cbm/status/AlertCount",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/status/LossPerLine"
-        ]
-      }
-    }
-  ],
-  [
-    110,
-    "/cbm/status/LossPerDevice",
-    "",
-    "webclient",
-    {
-      "1": {
-        "name": "LossPerDevice",
-        "dispName": "장치별 열화 현상",
-        "description": "장치치별 열화 현상 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/status/AlertCount",
-        "store": "/static",
-        "storage": "/disk",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/status/LossPerDevice"
-        ]
-      }
-    }
-  ],
-  [
-    111,
-    "/cbm/status/TrainCountPerLine",
-    "",
-    "webclient",
-    {
-      "2": {
-        "name": "TrainCountPerLine",
-        "dispName": "노선별 편성 수",
-        "description": "노선별 편성 수 데이터 엘리먼트",
-        "type": "element",
-        "icon": "",
-        "color": "",
-        "storage": "/disk",
-        "format": "/cbm/status/Counting",
-        "store": "/static",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/status/TrainCountPerLine"
-        ]
-      }
-    }
-  ],
-  [
-    112,
-    "/cbm/event",
-    "",
-    "webclient",
-    {
-      "2": {
-        "name": "event",
-        "dispName": "이벤트",
-        "description": "이벤트 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    113,
-    "/cbm/event/RTMaintenanceInfo",
-    "",
-    "webclient",
-    {
-      "0": {
-        "name": "RTMaintenanceInfo",
-        "dispName": "실시간 유지보수 정보",
-        "description": "실시간 유지보 수 정보 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/event/RTMaintenanceInfo",
-        "store": "/disk/1year",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/event/RTMaintenanceInfo"
-        ]
-      }
-    }
-  ],
-  [
-    114,
-    "/cbm/event/SystemEventInfo",
-    "",
-    "webclient",
-    {
-      "1": {
-        "name": "SystemEventInfo",
-        "dispName": "시스템 이벤트 정보",
-        "description": "시스템 이벤트 정보 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/event/SystemEventInfo",
-        "store": "/disk/1year",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/event/SystemEventInfo"
-        ]
-      }
-    }
-  ],
-  [
-    115,
-    "/cbm/history",
-    "",
-    "webclient",
-    {
-      "3": {
-        "name": "history",
-        "dispName": "이력",
-        "description": "이력 데이터 엘리먼트 폴더",
-        "type": "folder"
-      }
-    }
-  ],
-  [
-    116,
-    "/cbm/history/LossHistoryPerLine",
-    "",
-    "webclient",
-    {
-      "0": {
-        "name": "LossHistoryPerLine",
-        "dispName": "노선별 열화 이력",
-        "description": "노선별 열화 이력 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/history/LossHistoryPerLine",
-        "store": "/disk/7day",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/history/LossHistoryPerLine"
-        ]
-      }
-    }
-  ],
-  [
-    117,
-    "/cbm/history/LossHistoryPerDevice",
-    "",
-    "webclient",
-    {
-      "1": {
-        "name": "LossHistoryPerDevice",
-        "dispName": "장치별 열화 이력",
-        "description": "장치치별 열화 이력 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/history/LossHistoryPerDevice",
-        "store": "/disk/7day",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/history/LossHistoryPerDevice"
-        ]
-      }
-    }
-  ],
-  [
-    118,
-    "/cbm/history/MaintenanceHistoryPerLine",
-    "",
-    "webclient",
-    {
-      "2": {
-        "name": "MaintenanceHistoryPerLine",
-        "dispName": "노선별 유지보수 이력",
-        "description": "노선선별 유지보수 이력 데이터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/history/MaintenanceHistoryPerLine",
-        "store": "/disk/1year",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/history/MaintenanceHistoryPerLine"
-        ]
-      }
-    }
-  ],
-  [
-    119,
-    "/cbm/history/DetailLossLevelHistory",
-    "",
-    "webclient",
-    {
-      "3": {
-        "name": "DetailLossLevelHistory",
-        "dispName": "상세 열화등급 이력",
-        "description": "상세 열화등급 이력 데이 터 엘리먼트",
-        "type": "element",
-        "format": "/cbm/history/DetailLossLevelHistory",
-        "store": "/disk/1year",
-        "processor": "/common/transparent",
-        "processingInterval": "10",
-        "processingUnit": "SEC",
-        "sources": [
-          "config:/cbm/history/DetailLossLevelHistory"
-        ]
-      }
-    }
-  ],
-  [
-    120,
+    13,
     "/admin",
     "",
-    "webclient",
+    "pm-webclient",
     {
-      "1": {
+      "0": {
         "name": "admin",
         "dispName": "관리자용 데이터",
         "description": "관리자용 데이터 엘리먼트 폴더",
@@ -984,10 +282,10 @@
     }
   ],
   [
-    121,
+    14,
     "/admin/menu",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "0": {
         "name": "menu",
@@ -1003,16 +301,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/menu"
+          "pm-config:/admin/menu"
         ]
       }
     }
   ],
   [
-    122,
+    15,
     "/admin/storage",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "1": {
         "name": "storage",
@@ -1028,16 +326,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/storage"
+          "pm-config:/admin/storage"
         ]
       }
     }
   ],
   [
-    123,
+    16,
     "/admin/format",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "2": {
         "name": "format",
@@ -1053,16 +351,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/format"
+          "pm-config:/admin/format"
         ]
       }
     }
   ],
   [
-    124,
+    17,
     "/admin/store",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "3": {
         "name": "store",
@@ -1078,16 +376,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/store"
+          "pm-config:/admin/store"
         ]
       }
     }
   ],
   [
-    125,
+    18,
     "/admin/processor",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "4": {
         "name": "processor",
@@ -1103,16 +401,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/processor"
+          "pm-config:/admin/processor"
         ]
       }
     }
   ],
   [
-    126,
+    19,
     "/admin/system",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "5": {
         "name": "system",
@@ -1128,16 +426,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/system"
+          "pm-config:/admin/system"
         ]
       }
     }
   ],
   [
-    127,
+    20,
     "/admin/element",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "6": {
         "name": "element",
@@ -1153,16 +451,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/element"
+          "pm-config:/admin/element"
         ]
       }
     }
   ],
   [
-    129,
+    21,
     "/admin/contents",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "7": {
         "name": "contents",
@@ -1178,16 +476,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/contents"
+          "pm-config:/admin/contents"
         ]
       }
     }
   ],
   [
-    130,
+    22,
     "/admin/applet",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "8": {
         "name": "applet",
@@ -1203,16 +501,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/applet"
+          "pm-config:/admin/applet"
         ]
       }
     }
   ],
   [
-    131,
+    23,
     "/admin/section",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "0": {
         "name": "section",
@@ -1228,16 +526,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/section"
+          "pm-config:/admin/section"
         ]
       }
     }
   ],
   [
-    132,
+    24,
     "/admin/user",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "10": {
         "name": "user",
@@ -1253,16 +551,16 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/user"
+          "pm-config:/admin/user"
         ]
       }
     }
   ],
   [
-    133,
+    25,
     "/admin/theme",
     "",
-    "webclient",
+    "pm-webclient",
     {
       "11": {
         "name": "theme",
@@ -1278,46 +576,8 @@
         "processingInterval": "10",
         "processingUnit": "SEC",
         "sources": [
-          "config:/admin/theme"
+          "pm-config:/admin/theme"
         ]
-      }
-    }
-  ],
-  [
-    136,
-    "/new-folder-2344081",
-    "",
-    "analysis",
-    {
-      "0": {
-        "name": "new-folder-2344081",
-        "dispName": "",
-        "description": "",
-        "type": "folder",
-        "icon": "",
-        "color": ""
-      }
-    }
-  ],
-  [
-    137,
-    "/new-folder-2344081/new-element-234419",
-    "",
-    "analysis",
-    {
-      "0": {
-        "name": "new-element-234419",
-        "dispName": "",
-        "description": "",
-        "type": "element",
-        "icon": "",
-        "color": "",
-        "storage": "",
-        "format": "",
-        "store": "",
-        "processor": "",
-        "processingInterval": "",
-        "sources": ""
       }
     }
   ]

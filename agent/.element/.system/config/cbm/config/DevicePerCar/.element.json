@@ -10,6 +10,6 @@
   "processingInterval": "10",
   "processingUnit": "SEC",
   "sources": [
-    "config:/cbm/config/DevicePerCar"
+    "pm-config:/cbm/config/DevicePerCar"
   ]
 }

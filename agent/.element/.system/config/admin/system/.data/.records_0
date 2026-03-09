@@ -1,14 +1,14 @@
 [
   [
     0,
-    "/webclient",
+    "/pm-webclient",
     "",
     "",
     {
       "0": {
-        "name": "webclient",
-        "dispName": "웹클라이언트",
-        "description": "웹클라이언트",
+        "name": "pm-webclient",
+        "dispName": "프로젝트관리UI",
+        "description": "프로젝트 관리 Web UI",
         "type": "system",
         "icon": "/config/system",
         "color": "",
@@ -21,56 +21,20 @@
   ],
   [
     1,
-    "/config",
+    "/pm-config",
     "",
     "",
     {
       "1": {
-        "name": "config",
-        "dispName": "설정서버",
-        "description": "설정서버",
-        "type": "system",
-        "address": {
-          "ip": "127.0.0.1",
-          "port": "9080"
-        }
-      }
-    }
-  ],
-  [
-    2,
-    "/collector",
-    "",
-    "",
-    {
-      "2": {
-        "name": "collector",
-        "dispName": "수집서버",
-        "description": "CBM 수집서버",
-        "type": "system",
-        "address": {
-          "ip": "192.168.0.3",
-          "port": "8080"
-        }
-      }
-    }
-  ],
-  [
-    3,
-    "/analysis",
-    "",
-    "",
-    {
-      "3": {
-        "name": "analysis",
-        "dispName": "분석서버",
-        "description": "",
+        "name": "pm-config",
+        "dispName": "프로젝트관리 설정서버",
+        "description": "프로젝트관리 설정서버",
         "type": "system",
         "icon": "",
         "color": "",
         "address": {
-          "ip": "",
-          "port": ""
+          "ip": "127.0.0.1",
+          "port": "9080"
         }
       }
     }

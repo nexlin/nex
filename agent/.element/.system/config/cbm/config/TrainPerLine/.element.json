@@ -10,6 +10,6 @@
   "processingInterval": "10",
   "processingUnit": "SEC",
   "sources": [
-    "config:/cbm/config/TrainPerLine"
+    "pm-config:/cbm/config/TrainPerLine"
   ]
 }

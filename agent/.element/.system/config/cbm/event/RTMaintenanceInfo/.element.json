@@ -9,6 +9,6 @@
   "processingInterval": "10",
   "processingUnit": "SEC",
   "sources": [
-    "config:/cbm/event/RTMaintenanceInfo"
+    "pm-config:/cbm/event/RTMaintenanceInfo"
   ]
 }

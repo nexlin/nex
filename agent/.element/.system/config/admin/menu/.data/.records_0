@@ -5,7 +5,7 @@
     "",
     "",
     {
-      "2": {
+      "0": {
         "name": "admin",
         "dispName": "프로젝트빌더",
         "description": "프로젝트관리",
@@ -216,89 +216,6 @@
         "icon": "/config/processor",
         "color": "",
         "route": "/admin/processor"
-      }
-    }
-  ],
-  [
-    30,
-    "/sample",
-    "",
-    "",
-    {
-      "0": {
-        "name": "sample",
-        "dispName": "샘플페이지",
-        "description": "",
-        "type": "folder",
-        "icon": "",
-        "color": ""
-      }
-    }
-  ],
-  [
-    31,
-    "/sample/data-sample",
-    "",
-    "",
-    {
-      "0": {
-        "name": "data-sample",
-        "dispName": "데이터 출력",
-        "description": "",
-        "type": "menu",
-        "icon": "/config/contents",
-        "color": "",
-        "route": "/sample/base"
-      }
-    }
-  ],
-  [
-    32,
-    "/cbm",
-    "",
-    "",
-    {
-      "1": {
-        "name": "cbm",
-        "dispName": "CBM 프로젝트",
-        "description": "",
-        "type": "folder",
-        "icon": "",
-        "color": ""
-      }
-    }
-  ],
-  [
-    33,
-    "/cbm/dashboard",
-    "",
-    "",
-    {
-      "1": {
-        "name": "dashboard",
-        "dispName": "대시보드",
-        "description": "",
-        "type": "menu",
-        "icon": "/cbm/dashboard",
-        "color": "",
-        "route": "/cbm/dashboard"
-      }
-    }
-  ],
-  [
-    34,
-    "/cbm/cbm-test",
-    "",
-    "",
-    {
-      "0": {
-        "name": "cbm-test",
-        "dispName": "테스트",
-        "description": "",
-        "type": "menu",
-        "icon": "",
-        "color": "",
-        "route": "/cbm"
       }
     }
   ]

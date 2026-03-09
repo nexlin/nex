@@ -9,6 +9,6 @@
   "processingInterval": "10",
   "processingUnit": "SEC",
   "sources": [
-    "config:/cbm/history/LossHistoryPerLine"
+    "pm-config:/cbm/history/LossHistoryPerLine"
   ]
 }

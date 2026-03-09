@@ -15,12 +15,14 @@ interface NexAppProps {
   //section: any;
   //theme?: any; // Optional theme prop, can be used for styling
   configStore: NexConfigStore; // Optional config store prop, can be used for configuration
+  adminStore: NexConfigStore; // Optional config store prop, can be used for configuration
 }
 
 const NexApp: React.FC<NexAppProps> = observer((props) => {
-  const { configStore } = props;
+  const { configStore, adminStore } = props;
 
   const [sections, setSections] = useState<any[]>([]);
+  const [admin_sections, setAdminSections] = useState<any[]>([]);
   useEffect(() => {
     // Fetch configuration when the component mounts
     if (!configStore.isReady) {
@@ -29,7 +31,15 @@ const NexApp: React.FC<NexAppProps> = observer((props) => {
     }
     //console.log("NexApp configStore:", configStore);
     setSections(configStore?.config.websections);
-  }, [configStore, configStore.isReady]);
+
+    if (!adminStore.isReady) {
+      setAdminSections([]);
+      return;
+    }
+    //console.log("NexApp adminStore:", adminStore);
+    setAdminSections(adminStore?.config.websections);
+
+  }, [configStore, configStore.isReady, adminStore, adminStore.isReady]);
   //const section = configStore?.config.websections[0];
 
   //console.log("NexApp section:", JSON.stringify(section, null, 2));
@@ -49,11 +59,22 @@ const NexApp: React.FC<NexAppProps> = observer((props) => {
           <Router>
             <Routes>
               <Route
-                path="*"
+                path="/main/*"
                 element={
                   <NexPageViewer
                     key={sections[0].name}
                     section={sections[0]}
+                    isVisibleBorder={false}
+                    isVisibleTitle={false}
+                  />
+                }
+              />
+              <Route
+                path="/admin/*"
+                element={
+                  <NexPageViewer
+                    key={admin_sections[0].name}
+                    section={admin_sections[0]}
                     isVisibleBorder={false}
                     isVisibleTitle={false}
                   />

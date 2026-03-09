@@ -1,7 +1,7 @@
 {
-  "name": "webclient",
-  "dispName": "웹클라이언트",
-  "description": "웹클라이언트",
+  "name": "pm-webclient",
+  "dispName": "프로젝트관리UI",
+  "description": "프로젝트 관리 Web UI",
   "type": "system",
   "icon": "/config/system",
   "color": "",

@@ -51,7 +51,11 @@ if __name__ == '__main__':
         mgr_registry.ELEMENT_MGR = element_mgr
 
         if system_info.type == SystemType.ADMIN:
-            admin_mgr = AdminMgr()
+            print(f"# AdminMgr(admin) start ##############################")
+            admin_mgr = AdminMgr("admin")
+            print(f"# AdminMgr(config) start ##############################")
+            admin_config_mgr = AdminMgr("config")
+            print(f"# AdminMgr - end ##############################")
             local_ip = '0.0.0.0'
             local_port = 9080
         else:
@@ -70,6 +74,8 @@ if __name__ == '__main__':
         http_server.add_dynamic_rules(element_mgr.getQueryHandlers())
         if admin_mgr:
             http_server.add_dynamic_rules(admin_mgr.get_query_handlers())
+        if admin_config_mgr:
+            http_server.add_dynamic_rules(admin_config_mgr.get_query_handlers())
         if config_mgr:
             http_server.add_dynamic_rules(config_mgr.getQueryHandlers())
 

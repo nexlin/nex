@@ -12,6 +12,6 @@
   "processingInterval": "10",
   "processingUnit": "SEC",
   "sources": [
-    "config:/admin/menu"
+    "pm-config:/admin/menu"
   ]
 }

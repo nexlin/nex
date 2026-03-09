@@ -2,6 +2,10 @@
 
 # 0. 환경 구성
 
+# ubuntu 24.04 기준
+sudo apt-get update
+sudo apt-get install python3.12-dev
+
 # 0.1 가상환경 만들기
 
 python -m venv venv

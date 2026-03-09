@@ -1,6 +1,7 @@
 {
-  "config-url": "http://192.168.0.159:9080/config-api",
-  "command-url": "http://192.168.0.159:9080/cmd-api",
+  "admin-url": "http://192.168.199.129:9080/admin-api",
+  "config-url": "http://192.168.199.129:9080/config-api",
+  "command-url": "http://192.168.199.129:9080/cmd-api",
   "project": "",
-  "system": "webclient"
+  "system": "pm-webclient"
 }

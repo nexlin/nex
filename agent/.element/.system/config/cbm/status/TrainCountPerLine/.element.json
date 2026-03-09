@@ -12,6 +12,6 @@
   "processingInterval": "10",
   "processingUnit": "SEC",
   "sources": [
-    "config:/cbm/status/TrainCountPerLine"
+    "pm-config:/cbm/status/TrainCountPerLine"
   ]
 }

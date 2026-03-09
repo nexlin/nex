@@ -10,6 +10,6 @@
   "processingInterval": "10",
   "processingUnit": "SEC",
   "sources": [
-    "config:/cbm/config/CarPerTrain"
+    "pm-config:/cbm/config/CarPerTrain"
   ]
 }

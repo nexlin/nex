@@ -203,7 +203,6 @@ class NexConfigStore {
 
         this.config.contents = buildAdminConfig(cfgMap["contents"]);
 
-        this.config.applets = buildAdminConfig(cfgMap["applet"]);
 
         this.config.websections = buildAdminConfig(cfgMap["section"]);
 
@@ -312,4 +311,11 @@ export const configStore = new NexConfigStore(
   pxConfig["project"],
   pxConfig["system"]
 );
+
+export const adminStore = new NexConfigStore(
+  pxConfig["admin-url"],
+  pxConfig["project"],
+  pxConfig["system"]
+);
+
 export default NexConfigStore;

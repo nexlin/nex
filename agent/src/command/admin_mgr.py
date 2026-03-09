@@ -22,13 +22,18 @@ from api.api_proc import HttpReqMgr
 
 
 
-class AdminMgr(SingletonInstance):
-    def _on_init_once(self):
+class AdminMgr():
+    def __init__(self, type):
+        self._type = type
         self._logger = Logger()
 
-        self.configSystemName = "config"
-
-        self._configPath = f"./.config" # 배포용 경로
+        print(f"AdminMgr::_on_init_once({type})")
+        if(self._type == "config"):
+            self.configSystemName = "config"
+            self._configPath = f"./.config" # 설정 배포용 경로
+        else:
+            self.configSystemName = "admin"
+            self._configPath = f"./.admin" # 어드민 설정 경로(Read Only)
 
         # 데이터 엘리먼트 루트 경로
         self._elementPath = ".element"
@@ -477,14 +482,20 @@ class AdminMgr(SingletonInstance):
             return HandlerResult(status=500, body=f'exception : {e}')
 
     def get_query_handlers(self) -> List[Tuple[str, Server_Dynamic_Handler, dict]]:
-        handler_list: List[Tuple[str, Server_Dynamic_Handler, dict]] = [
-            ("/config-api", self._getConfig, {"cmd_id": "/admin-api"}),
-            ("/data-api", self._cmdData, {"cmd_id": "/data-api"}),
-            ("/cmd-api/dist", self._distribution, {"cmd_id": "/cmd-api/dist"}),
-            ("/cmd-api/gen-db-element", self._genDbElement, {"cmd_id": "/cmd-api/gen-db-element"}),
-            
-        ]
+        if(self._type == "config"):
+            handler_list: List[Tuple[str, Server_Dynamic_Handler, dict]] = [
+                ("/config-api", self._getConfig, {"cmd_id": "/admin-api"}),
+                ("/data-api", self._cmdData, {"cmd_id": "/data-api"}),
+                ("/cmd-api/dist", self._distribution, {"cmd_id": "/cmd-api/dist"}),
+                ("/cmd-api/gen-db-element", self._genDbElement, {"cmd_id": "/cmd-api/gen-db-element"}),
+            ]
+        elif(self._type == "admin"):
+            handler_list: List[Tuple[str, Server_Dynamic_Handler, dict]] = [
+                ("/admin-api", self._getConfig, {"cmd_id": "/admin-api"}),
+            ]
+        else:
+            handler_list: List[Tuple[str, Server_Dynamic_Handler, dict]] = []
         return handler_list
 
 if __name__ == '__main__':
-    adminMgr = AdminMgr()
+    adminMgr = AdminMgr("admin")

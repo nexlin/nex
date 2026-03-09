@@ -16,7 +16,6 @@ CONFIG_LIST = {
     'SYSTEM':'system',
     'ELEMENT':'element',
     'CONTENTS':'contents',
-    'APPLET':'applet',
     'SECTION':'section',
     'THEME':'theme',
     'USER':'user',

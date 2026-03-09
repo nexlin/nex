@@ -1,0 +1,205 @@
+[
+  [
+    0,
+    "/admin",
+    "",
+    "",
+    {
+      "0": {
+        "name": "admin",
+        "dispName": "프로젝트빌더",
+        "description": "프로젝트관리",
+        "type": "folder",
+        "icon": "/cbm/dashboard-list",
+        "color": ""
+      }
+    }
+  ],
+  [
+    1,
+    "/admin/menu",
+    "",
+    "",
+    {
+      "0": {
+        "name": "menu",
+        "dispName": "메뉴",
+        "description": "메뉴설정",
+        "type": "menu",
+        "icon": "/config/menu",
+        "color": "",
+        "route": "/_admin_/menu"
+      }
+    }
+  ],
+  [
+    2,
+    "/admin/system",
+    "",
+    "",
+    {
+      "1": {
+        "name": "system",
+        "dispName": "시스템",
+        "description": "시스템 설정",
+        "type": "menu",
+        "icon": "/config/system",
+        "color": "",
+        "route": "/_admin_/system"
+      }
+    }
+  ],
+  [
+    3,
+    "/admin/storage",
+    "",
+    "",
+    {
+      "2": {
+        "name": "storage",
+        "dispName": "데이터 저장소",
+        "description": "",
+        "type": "menu",
+        "icon": "/config/storage",
+        "color": "",
+        "route": "/_admin_/storage"
+      }
+    }
+  ],
+  [
+    4,
+    "/admin/format",
+    "",
+    "",
+    {
+      "3": {
+        "name": "format",
+        "dispName": "데이터 포맷",
+        "description": "데이터 포맷 설정",
+        "type": "menu",
+        "icon": "/config/format",
+        "color": "",
+        "route": "/_admin_/format"
+      }
+    }
+  ],
+  [
+    5,
+    "/admin/store",
+    "",
+    "",
+    {
+      "4": {
+        "name": "store",
+        "dispName": "데이터 보관정책",
+        "description": "데이터 보관정책",
+        "type": "menu",
+        "icon": "/config/store",
+        "color": "",
+        "route": "/_admin_/store"
+      }
+    }
+  ],
+  [
+    6,
+    "/admin/processor",
+    "",
+    "",
+    {
+      "5": {
+        "name": "processor",
+        "dispName": "데이터 처리",
+        "description": "",
+        "type": "menu",
+        "icon": "/config/processor",
+        "color": "",
+        "route": "/_admin_/processor"
+      }
+    }
+  ],
+  [
+    7,
+    "/admin/element",
+    "",
+    "",
+    {
+      "6": {
+        "name": "element",
+        "dispName": "데이터 엘리먼트",
+        "description": "데이터 엘리먼트 설정",
+        "type": "menu",
+        "icon": "/config/element",
+        "color": "",
+        "route": "/_admin_/element"
+      }
+    }
+  ],
+  [
+    8,
+    "/admin/contents",
+    "",
+    "",
+    {
+      "7": {
+        "name": "contents",
+        "dispName": "데이터 컨텐츠",
+        "description": "웹 데이터 컨텐츠 설정",
+        "type": "menu",
+        "icon": "/config/contents",
+        "color": "",
+        "route": "/_admin_/contents"
+      }
+    }
+  ],
+  [
+    9,
+    "/admin/section",
+    "",
+    "",
+    {
+      "8": {
+        "name": "section",
+        "dispName": "웹 섹션",
+        "description": "웹 데이터 섹션 설정",
+        "type": "menu",
+        "icon": "/config/section",
+        "color": "",
+        "route": "/_admin_/section"
+      }
+    }
+  ],
+  [
+    10,
+    "/admin/user",
+    "",
+    "",
+    {
+      "9": {
+        "name": "user",
+        "dispName": "사용자",
+        "description": "사용자 설정",
+        "type": "menu",
+        "icon": "/config/user",
+        "color": "",
+        "route": "/_admin_/user"
+      }
+    }
+  ],
+  [
+    11,
+    "/admin/theme",
+    "",
+    "",
+    {
+      "10": {
+        "name": "theme",
+        "dispName": "테마",
+        "description": "테마 설정",
+        "type": "menu",
+        "icon": "/config/theme",
+        "color": "",
+        "route": "/_admin_/theme"
+      }
+    }
+  ]
+]
