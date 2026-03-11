@@ -61,7 +61,7 @@ export interface NexNode {
   //[key: string]: any; // Additional properties can be added dynamically
 }
 
-export interface NexProjectNode extends NexNode {}
+export interface NexProjectNode extends NexNode { }
 
 export interface NexFolderNode extends NexNode {
   children: NexNode[]; // Array of child objects (could be systems, formats,
@@ -182,14 +182,14 @@ export interface NexElementNode extends NexNode {
   processor: string; // 데이터 수집 및 처리 모듈(경로)
   processingInterval: number; // 0: 초기 한번 수집
   processingUnit:
-    | "NONE"
-    | "MSEC"
-    | "SEC"
-    | "MIN"
-    | "HOUR"
-    | "DAY"
-    | "MONTH"
-    | "YEAR"; // MSEC, SEC, MIN, SEC, HOUR, DAY, MONTH, YEAR
+  | "NONE"
+  | "MSEC"
+  | "SEC"
+  | "MIN"
+  | "HOUR"
+  | "DAY"
+  | "MONTH"
+  | "YEAR"; // MSEC, SEC, MIN, SEC, HOUR, DAY, MONTH, YEAR
   source: string; // Source paths for the element, e.g., ["/system-name/element-path1", "/system-name/element-path2"]
 }
 
@@ -197,13 +197,13 @@ export type NexCondition = {
   key: string; // Feature name for the condition
   feature: string; // Feature value for the condition
   method:
-    | "match"
-    | "path-match"
-    | "starts-with"
-    | "ends-with"
-    | "contains"
-    | "greater-than"
-    | "less-than"; // Condition method
+  | "match"
+  | "path-match"
+  | "starts-with"
+  | "ends-with"
+  | "contains"
+  | "greater-than"
+  | "less-than"; // Condition method
 };
 
 export type NexSelection = {
@@ -231,6 +231,10 @@ export interface NexWebSectionNode extends NexNode {
   applet?: string | null; // Applet path, e.g., "/applet-path"
   contents?: string[] | null; // Contents path list, e.g., ["/system-name/element-path1", "/system-name/element-path2"]
   children?: NexWebSectionNode[]; // Array of child sections
+}
+
+export interface NexMenuNode extends NexNode {
+  children?: NexMenuNode[]; // Array of child menus
 }
 
 export interface NexWebThemeNode extends NexNode {

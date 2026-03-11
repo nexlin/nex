@@ -11,7 +11,7 @@ import { Stack } from "@mui/material";
 // CSV-Style menu data : type(item | folder), path, name, dispName, description, icon, color, route )
 
 const NexMenuApp: React.FC<NexAppProps> = observer((props) => {
-  const { contents, user, theme } = props;
+  const { contents, user, theme, menu } = props;
 
   const [selectedPath, setSelectedPath] = useState<string>("");
 
@@ -37,7 +37,7 @@ const NexMenuApp: React.FC<NexAppProps> = observer((props) => {
   //  Freatures 에서 feature 별 Icon, color 정보 등을 가져오기
   const storeIndex = 0; // only 1 store
   const [nexTree, setNexTree] = useState<any>(null);
-  const [store, setStore] = useState<any>(null);
+  //const [store, setStore] = useState<any>(null);
 
   useEffect(() => {
     if (!contents || contents.length < 1) return;
@@ -53,13 +53,20 @@ const NexMenuApp: React.FC<NexAppProps> = observer((props) => {
       contentsData = indexes.map((index: number) => cts.data[index]);
     }
 
-    const tree = buildAdminConfig(contentsData);
-    //console.log("NexMenuApp: nexTree=", JSON.stringify(tree, null, 2));
-    setNexTree({ data: tree });
-    setStore(cts.store);
-    //setFormat(cts.format);
-    //setSelectedKeys(cts.selectedKeys);
+    if (menu) {
+      setNexTree({ data: menu });
+    } else {
+      const tree = buildAdminConfig(contentsData);
+      //console.log("NexMenuApp: nexTree=", JSON.stringify(tree, null, 2));
+      //setNexTree({ data: tree });
+      setNexTree({ data: menu });
+      //setStore(cts.store);
+      //setFormat(cts.format);
+      //setSelectedKeys(cts.selectedKeys);
+    }
   }, [contents]);
+
+  console.log("NexMenuApp: nexTree=", JSON.stringify(menu, null, 2));
 
   const navigate = useNavigate();
   const handleClick = (path: string) => {

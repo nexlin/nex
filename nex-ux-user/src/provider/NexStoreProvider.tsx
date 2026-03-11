@@ -1,17 +1,19 @@
 import NexDataStore from "store/NexDataStore";
 import { createContext, useMemo } from "react";
 import { observer } from "mobx-react-lite";
-import NexConfigStore from "store/NexConfigStore";
+import { NexConfig } from "store/NexConfigStore";
 import {
   NexThemeUser,
   defaultThemeUser,
   defaultTheme,
   NexTheme,
 } from "type/NexTheme";
+
 import { nexAppletMap } from "applet/nexApplets";
 import NexSelector from "store/NexSelector";
+//import { NexMenuNode } from "type/NexNode";
 export interface NexStoreProviderProps {
-  configStore: NexConfigStore; // ConfigStore를 prop으로 받음
+  config: NexConfig; // NexConfig를 prop으로 받음
   children: React.ReactNode;
 }
 
@@ -21,6 +23,7 @@ export interface NexStoreContextValue {
   appMap: Record<string, React.FC<any> | null>; // key applet  path, value NexApplet
   contentsMap: Record<string, any>; // key contents path, value contents data
   theme: NexTheme;
+  config: NexConfig | null;
   user: NexThemeUser;
   elementNodeMap: Record<string, any>; // element nodes
   appNodeMap: Record<string, any>; // applet nodes
@@ -31,6 +34,7 @@ export const NexStoreContext = createContext<NexStoreContextValue>({
   storeMap: {},
   appMap: {},
   contentsMap: {},
+  config: null,
   theme: defaultTheme,
   user: defaultThemeUser,
   elementNodeMap: {},
@@ -74,26 +78,26 @@ function findNodeByPath(nodes: any[], path: string): any | null {
 }
 
 const NexStoreProvider: React.FC<NexStoreProviderProps> = observer(
-  ({ children, configStore }) => {
+  ({ children, config }) => {
     const userName = "admin";
 
     const formatCfgs = useMemo(() => {
-      return collectNode(configStore.config.formats, "format");
-    }, [configStore.config.formats]);
+      return collectNode(config.formats, "format");
+    }, [config.formats]);
 
     const storeCfgs = useMemo(
-      () => collectNode(configStore.config.stores, "store"),
-      [configStore.config.stores]
+      () => collectNode(config.stores, "store"),
+      [config.stores]
     );
 
     const processorCfgs = useMemo(
-      () => collectNode(configStore.config.processors, "processor"),
-      [configStore.config.processors]
+      () => collectNode(config.processors, "processor"),
+      [config.processors]
     );
 
     const systemCfgs = useMemo(() => {
-      return collectNode(configStore.config.systems, "system");
-    }, [configStore.config.systems]);
+      return collectNode(config.systems, "system");
+    }, [config.systems]);
 
     const systemAddrDict = useMemo(() => {
       const dict: Record<string, { ip: string; port: number }> = {};
@@ -109,34 +113,34 @@ const NexStoreProvider: React.FC<NexStoreProviderProps> = observer(
     }, [systemCfgs]);
 
     const elementCfgs = useMemo(
-      () => collectNode(configStore.config.elements, "element"),
-      [configStore.config.elements]
+      () => collectNode(config.elements, "element"),
+      [config.elements]
     );
 
     const contentsCfgs = useMemo(
-      () => collectNode(configStore.config.contents, "contents"),
-      [configStore.config.contents]
+      () => collectNode(config.contents, "contents"),
+      [config.contents]
     );
 
     const appletCfgs = useMemo(
-      () => collectNode(configStore.config.applets, "applet"),
-      [configStore.config.applets]
+      () => collectNode(config.applets, "applet"),
+      [config.applets]
     );
 
     const themeUser: NexThemeUser = useMemo(() => {
-      const userNode = configStore.config.webThemeUsers.find(
+      const userNode = config.webThemeUsers.find(
         (user: any) => user.name === userName
       );
 
       return userNode?.user || defaultThemeUser;
-    }, [configStore.config.webThemeUsers]);
+    }, [config.webThemeUsers]);
 
     const theme: NexTheme = useMemo(() => {
-      const themeNode = configStore.config.webThemes.find(
+      const themeNode = config.webThemes.find(
         (t: any) => t.name === themeUser.theme
       );
       return themeNode?.theme || defaultTheme;
-    }, [configStore.config.webThemes, themeUser]);
+    }, [config.webThemes, themeUser]);
 
     const storeMap = useMemo(() => {
       const storeMap: Record<string, NexDataStore> = {};
@@ -166,12 +170,14 @@ const NexStoreProvider: React.FC<NexStoreProviderProps> = observer(
 */
     const selector = useMemo(() => new NexSelector(), []);
 
+    //console.log("NexStoreProvider menu:", JSON.stringify(config.menu, null, 2));
     // theme, applet도 context value에 포함
     const contextValue: NexStoreContextValue = {
       storeMap: storeMap,
       appMap: nexAppletMap,
       contentsMap: contentsCfgs,
       theme: theme,
+      config: config.isAdmin ? config : null,
       user: themeUser,
       elementNodeMap: elementCfgs,
       appNodeMap: appletCfgs,

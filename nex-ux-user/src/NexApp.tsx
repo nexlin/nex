@@ -14,7 +14,7 @@ import { set } from "mobx";
 interface NexAppProps {
   //section: any;
   //theme?: any; // Optional theme prop, can be used for styling
-  configStore: NexConfigStore; // Optional config store prop, can be used for configuration
+  configStore: NexConfigStore | null; // Optional config store prop, can be used for configuration
   adminStore: NexConfigStore; // Optional config store prop, can be used for configuration
 }
 
@@ -25,114 +25,72 @@ const NexApp: React.FC<NexAppProps> = observer((props) => {
   const [admin_sections, setAdminSections] = useState<any[]>([]);
   useEffect(() => {
     // Fetch configuration when the component mounts
-    if (!configStore.isReady) {
+    if (!configStore?.isReady) {
       setSections([]);
-      return;
+      //return;
     }
     //console.log("NexApp configStore:", configStore);
-    setSections(configStore?.config.websections);
+    configStore && setSections(configStore?.config?.websections || []);
 
     if (!adminStore.isReady) {
       setAdminSections([]);
-      return;
+      //return;
     }
-    //console.log("NexApp adminStore:", adminStore);
-    setAdminSections(adminStore?.config.websections);
+    //console.log("NexApp adminStore:", JSON.stringify(adminStore.config.websections, null, 2));
+    setAdminSections(adminStore?.config?.websections || []);
 
-  }, [configStore, configStore.isReady, adminStore, adminStore.isReady]);
+  }, [configStore, configStore?.isReady, adminStore, adminStore.isReady]);
   //const section = configStore?.config.websections[0];
 
-  //console.log("NexApp section:", JSON.stringify(section, null, 2));
+  console.log("NexApp admin_config:", JSON.stringify(adminStore.config, null, 2));
   return (
-    <NexStoreProvider configStore={configStore}>
-      <NexDiv
-        align="center"
-        justify="center"
-        width="100%"
-        height="100%"
-        overflow="hidden"
-        style={{ position: "fixed", inset: 0, boxSizing: "border-box" }}
-      >
-        {sections.length === 0 || !configStore.isReady ? (
-          <div>Loading... {configStore.isReady ? "Ready" : "Not Ready"}</div>
-        ) : (
-          <Router>
-            <Routes>
-              <Route
-                path="/main/*"
-                element={
+
+    <NexDiv
+      align="center"
+      justify="center"
+      width="100%"
+      height="100%"
+      overflow="hidden"
+      style={{ position: "fixed", inset: 0, boxSizing: "border-box" }}
+    >
+      {admin_sections.length === 0 || !adminStore?.isReady ? (
+        <div>Loading... {configStore?.isReady ? "Ready" : "Not Ready"}</div>
+      ) : (
+        <Router>
+          <Routes>
+            {configStore && <Route
+              path="/main/*"
+              element={
+                <NexStoreProvider config={configStore!.config}>
                   <NexPageViewer
                     key={sections[0].name}
                     section={sections[0]}
                     isVisibleBorder={false}
                     isVisibleTitle={false}
                   />
-                }
-              />
-              <Route
-                path="/admin/*"
-                element={
+                </NexStoreProvider>
+              }
+            />}
+            <Route
+              path="/_admin_/*"
+              element={
+                <NexStoreProvider config={adminStore.config}>
                   <NexPageViewer
                     key={admin_sections[0].name}
                     section={admin_sections[0]}
                     isVisibleBorder={false}
                     isVisibleTitle={false}
                   />
-                }
-              />
-            </Routes>
-          </Router>
-        )}
-      </NexDiv>
-    </NexStoreProvider>
+                </NexStoreProvider>
+              }
+            />
+          </Routes>
+        </Router>
+      )}
+    </NexDiv>
+
   );
-  return (
-    <NexStoreProvider configStore={configStore}>
-      <NexDiv
-        align="center"
-        justify="center"
-        width="100%"
-        height="100%"
-        overflow="hidden"
-        style={{ position: "fixed", inset: 0, boxSizing: "border-box" }}
-      >
-        {sections.length === 0 || !configStore.isReady ? (
-          <div>Loading... {configStore.isReady ? "Ready" : "Not Ready"}</div>
-        ) : (
-          <Router>
-            <Routes>
-              <Route
-                path="*"
-                element={
-                  <Routes>
-                    {sections.map((section, i) => {
-                      if (!section.route) return null;
-                      const path = `${section.route}/*`;
-                      console.log("NexApp Route path:", path);
-                      return (
-                        <Route
-                          key={section.name}
-                          path={`${path}`}
-                          element={
-                            <NexPageViewer
-                              key={section.name}
-                              section={section}
-                              isVisibleBorder={false}
-                              isVisibleTitle={false}
-                            />
-                          }
-                        />
-                      );
-                    })}
-                  </Routes>
-                }
-              />
-            </Routes>
-          </Router>
-        )}
-      </NexDiv>
-    </NexStoreProvider>
-  );
+
 });
 
 export default NexApp;

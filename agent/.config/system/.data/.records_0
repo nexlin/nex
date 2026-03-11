@@ -1,31 +1,11 @@
-[
+ [ 
   [
     0,
-    "/pm-webclient",
-    "",
-    "",
-    {
-      "0": {
-        "name": "pm-webclient",
-        "dispName": "프로젝트관리UI",
-        "description": "프로젝트 관리 Web UI",
-        "type": "system",
-        "icon": "/config/system",
-        "color": "",
-        "address": {
-          "ip": "",
-          "port": 0
-        }
-      }
-    }
-  ],
-  [
-    1,
     "/pm-config",
     "",
     "",
     {
-      "1": {
+      "0": {
         "name": "pm-config",
         "dispName": "프로젝트관리 설정서버",
         "description": "프로젝트관리 설정서버",
@@ -39,4 +19,4 @@
       }
     }
   ]
-]
+ ]

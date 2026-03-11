@@ -73,7 +73,8 @@ export const buildAdminConfig = (datas: any[]) => {
   return root.children || [];
 };
 
-interface NexConfig {
+export interface NexConfig {
+  isAdmin: boolean;
   menu: NexNode[]; // 메뉴 정보
   storage: NexNode[]; // 스토리지 정보
   formats: NexNode[]; // 포맷 정보
@@ -95,6 +96,7 @@ class NexConfigStore {
 
   isReady: boolean = false;
   config: NexConfig = {
+    isAdmin: false,
     menu: [],
     storage: [],
     formats: [],
@@ -119,10 +121,11 @@ class NexConfigStore {
   //webThemes: NexTheme[] = [defaultTheme]; // webthemes 정보
   //webThemeUsers: NexThemeUser[] = [defaultThemeUser]; // 사용자 정보
 
-  constructor(url: string, projectName: string, systemName: string) {
+  constructor(url: string, projectName: string, systemName: string, isAdmin: boolean = false) {
     this.url = url; //url;
     this.projectName = projectName; // 프로젝트 이름 설정
     this.systemName = systemName;
+    this.config.isAdmin = isAdmin;
 
     makeObservable(this, {
       url: observable,
@@ -173,6 +176,9 @@ class NexConfigStore {
 
   async fetch() {
     try {
+      console.log("this.url", this.url);
+      console.log("this.projectName", this.projectName);
+      console.log("this.systemName", this.systemName);
       const response = await axios.get(this.url, {
         params: {
           project: this.projectName,
@@ -305,17 +311,21 @@ class NexConfigStore {
 
 //const nexConfig = new NexConfigStore("", "test", "/webui");
 //export default nexConfig;
-
+/*
 export const configStore = new NexConfigStore(
   pxConfig["config-url"],
   pxConfig["project"],
   pxConfig["system"]
 );
+*/
+
+export const configStore = null;
 
 export const adminStore = new NexConfigStore(
   pxConfig["admin-url"],
   pxConfig["project"],
-  pxConfig["system"]
+  pxConfig["system"],
+  true
 );
 
 export default NexConfigStore;

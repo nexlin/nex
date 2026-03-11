@@ -6,6 +6,7 @@ import { NexStoreContextValue } from "provider/NexStoreProvider";
 import NexDataStore from "store/NexDataStore";
 import { getThemeStyle } from "type/NexTheme";
 import nexApplets from "applet/nexApplets";
+import NexMenuApp from "applet/menu/NexMenuApp";
 
 export interface NexAppProviderProps {
   section: any;
@@ -29,8 +30,9 @@ const NexAppProvider: React.FC<NexAppProviderProps> = observer(
       contentsMap,
       appNodeMap,
       elementNodeMap,
-      theme: theme,
-      user: user,
+      config,
+      theme,
+      user,
       selector,
     } = context;
 
@@ -45,14 +47,11 @@ const NexAppProvider: React.FC<NexAppProviderProps> = observer(
 
     const padding = section["app-padding"] || appletStyle.padding || "8px";
 
-    //const dataStores = elementPaths?.map((path) => stores[path]);
     const appletPath = section?.applet || "";
-    //const app = appletPath ? appMap[appletPath] : null;
     const app = nexApplets(appletPath);
     const contentsPaths = section?.contents || [];
 
     const [modifiedCount, setModifiedCount] = useState<number>(0);
-
 
 
     if (appletPath !== "" && !app) {
@@ -75,6 +74,7 @@ const NexAppProvider: React.FC<NexAppProviderProps> = observer(
     }, [contentsPaths, contentsMap]);
 
     const contents: NexContents[] = useMemo(() => {
+
       return contentsNodeList?.map((content: any) => {
         const store = storeMap[content.element];
         const conditions = content.conditions || [];
@@ -117,6 +117,7 @@ const NexAppProvider: React.FC<NexAppProviderProps> = observer(
           format: store.format,
         };
       });
+
     }, [
       contentsNodeList,
       selector,
@@ -215,6 +216,7 @@ const NexAppProvider: React.FC<NexAppProviderProps> = observer(
       (content: any) => elementNodeMap[content.element]
     );
     //const conditions = applet?.contents.
+
     return (
       <NexDiv
         width='100%'
@@ -233,6 +235,7 @@ const NexAppProvider: React.FC<NexAppProviderProps> = observer(
             selector: selector,
             user: user,
             theme: theme,
+            menu: config && app === NexMenuApp ? config.menu : null,
             applet: appNodeMap[appletPath],
             elements: elementList,
             onSelect: handleSelect,

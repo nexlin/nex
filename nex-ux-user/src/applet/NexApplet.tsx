@@ -10,6 +10,8 @@ import { NexThemeUser } from "../type/NexTheme";
 import { nexIcon, nexNodeIcon } from "icon/NexIcon";
 import { NexContents } from "provider/NexAppProvider";
 import PXIcon from "icon/pxIcon";
+import { NexMenuNode } from "type/NexNode";
+import NexConfigStore from "store/NexConfigStore";
 
 /*
 export interface NexAppData {
@@ -29,6 +31,7 @@ export interface NexAppProps {
   store?: any;
   selector: NexSelector | null; // Optional selector prop for handling selections
   theme?: NexTheme;
+  menu?: any | null;
   user?: NexThemeUser;
   error?: string | null;
   applet?: any;

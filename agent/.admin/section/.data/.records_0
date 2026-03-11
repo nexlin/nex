@@ -1,14 +1,14 @@
 [
   [
     1,
-    "/Home",
+    "/Admin",
     "",
     "",
     {
       "0": {
-        "name": "Home",
-        "dispName": "Home",
-        "description": "Home Section",
+        "name": "Admin",
+        "dispName": "Admin",
+        "description": "Admin Section",
         "type": "section",
         "icon": "",
         "color": "",
@@ -26,7 +26,7 @@
   ],
   [
     2,
-    "/Home/Head",
+    "/Admin/Head",
     "",
     "",
     {
@@ -51,8 +51,33 @@
     }
   ],
   [
+    3,
+    "/Admin/Head/AdminHeader",
+    "",
+    "",
+    {
+      "0": {
+        "name": "AdminHeader",
+        "dispName": "PX Builder",
+        "description": "",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "size": 9,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/head/PXHeadApplet",
+        "contents": [],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
     6,
-    "/Home/Body",
+    "/Admin/Body",
     "",
     "",
     {
@@ -68,7 +93,7 @@
   ],
   [
     7,
-    "/Home/Body/Left",
+    "/Admin/Body/Left",
     "",
     "",
     {
@@ -91,7 +116,7 @@
   ],
   [
     8,
-    "/Home/Body/Left/Menu",
+    "/Admin/Body/Left/Menu",
     "",
     "",
     {
@@ -119,7 +144,7 @@
   ],
   [
     10,
-    "/Home/Body/Main",
+    "/Admin/Body/Main",
     "",
     "",
     {
@@ -141,44 +166,8 @@
     }
   ],
   [
-    11,
-    "/Home/Body/Main/Admin",
-    "",
-    "",
-    {
-      "0": {
-        "name": "Admin",
-        "dispName": "Admin",
-        "description": "Admin Page Section",
-        "type": "section",
-        "size": "24",
-        "direction": "column",
-        "route": "admin",
-        "isRoutes": true
-      }
-    }
-  ],
-  [
-    12,
-    "/Home/Body/Main/CBM",
-    "",
-    "",
-    {
-      "1": {
-        "name": "CBM",
-        "dispName": "CBM",
-        "description": "CBM Page Section",
-        "type": "section",
-        "size": "24",
-        "direction": "column",
-        "route": "cbm",
-        "isRoutes": true
-      }
-    }
-  ],
-  [
-    80,
-    "/Home/Body/Main/Admin/Menu",
+    50,
+    "/Admin/Body/Main/Menu",
     "",
     "",
     {
@@ -194,8 +183,91 @@
     }
   ],
   [
-    90,
-    "/Home/Body/Main/Admin/System",
+    51,
+    "/Admin/Body/Main/Menu/MenuFinder",
+    "",
+    "",
+    {
+      "0": {
+        "name": "MenuFinder",
+        "dispName": "메뉴 검색",
+        "description": "",
+        "type": "section",
+        "icon": "/config/menu",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "column",
+        "size": 4,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/NexNodeTree",
+        "contents": [
+          "/admin/menu"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    52,
+    "/Admin/Body/Main/Menu/MenuEditor",
+    "",
+    "",
+    {
+      "1": {
+        "name": "MenuEditor",
+        "dispName": "메뉴편집",
+        "description": "",
+        "type": "section",
+        "icon": "/config/menu",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "row",
+        "size": 6,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/PXConfigNodeEditor",
+        "contents": [
+          "/admin/SelectedMenu"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    53,
+    "/Admin/Body/Main/Menu/MenuJsonEditor",
+    "",
+    "",
+    {
+      "2": {
+        "name": "MenuJsonEditor",
+        "dispName": "메뉴편집(JSON)",
+        "description": "",
+        "type": "section",
+        "icon": "/config/menu",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "size": 6,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/card/CardView",
+        "contents": [
+          "/admin/SelectedMenu"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    60,
+    "/Admin/Body/Main/System",
     "",
     "",
     {
@@ -220,887 +292,8 @@
     }
   ],
   [
-    100,
-    "/Home/Body/Main/Admin/Format",
-    "",
-    "",
-    {
-      "3": {
-        "name": "Format",
-        "dispName": "Format",
-        "description": "Format Section",
-        "type": "section",
-        "size": "1",
-        "direction": "row",
-        "route": "format"
-      }
-    }
-  ],
-  [
-    101,
-    "/Home/Body/Main/Admin/Format/FormatFinder",
-    "",
-    "",
-    {
-      "0": {
-        "name": "FormatFinder",
-        "dispName": "데이터 포맷",
-        "description": "데이터 포맷",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": 4,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/NexNodeTree",
-        "contents": [
-          "/admin/format"
-        ]
-      }
-    }
-  ],
-  [
-    102,
-    "/Home/Body/Main/Admin/Format/FormatEditor",
-    "",
-    "",
-    {
-      "1": {
-        "name": "FormatEditor",
-        "dispName": "데이터 포맷 편집",
-        "description": "데이터 포맷 편집",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": 6,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/PXConfigNodeEditor",
-        "contents": [
-          "/admin/SelectedFormat"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    110,
-    "/Home/Body/Main/Admin/Store",
-    "",
-    "",
-    {
-      "4": {
-        "name": "Store",
-        "dispName": "Store",
-        "description": "Store Section",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "store",
-        "direction": "row",
-        "size": "1",
-        "padding": "",
-        "app-padding": "",
-        "applet": "",
-        "contents": "",
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    111,
-    "/Home/Body/Main/Admin/Store/1",
-    "",
-    "",
-    {
-      "0": {
-        "name": "1",
-        "dispName": "1",
-        "description": "StoreFinder Section",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": 4,
-        "padding": "",
-        "app-padding": "",
-        "applet": "",
-        "contents": [],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    112,
-    "/Home/Body/Main/Admin/Store/2",
-    "",
-    "",
-    {
-      "1": {
-        "name": "2",
-        "dispName": "2",
-        "description": "데이터 보관정책 편집",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": 6,
-        "padding": "",
-        "app-padding": "",
-        "applet": "",
-        "contents": [],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    140,
-    "/Home/Body/Main/Admin/Element",
-    "",
-    "",
-    {
-      "5": {
-        "name": "Element",
-        "dispName": "Element",
-        "description": "Element Section",
-        "type": "section",
-        "size": "1",
-        "direction": "row",
-        "route": "element"
-      }
-    }
-  ],
-  [
-    147,
-    "/Home/Body/Main/Admin/Element/Right",
-    "",
-    "",
-    {
-      "0": {
-        "name": "Right",
-        "dispName": "Right",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": 13,
-        "padding": "",
-        "app-padding": "",
-        "applet": "",
-        "contents": [],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    150,
-    "/Home/Body/Main/Admin/Contents",
-    "",
-    "",
-    {
-      "6": {
-        "name": "Contents",
-        "dispName": "웹컨텐츠",
-        "description": "웹컨텐츠",
-        "type": "section",
-        "size": "1",
-        "direction": "row",
-        "route": "contents"
-      }
-    }
-  ],
-  [
-    151,
-    "/Home/Body/Main/Admin/Contents/ContentsFinder",
-    "",
-    "",
-    {
-      "0": {
-        "name": "ContentsFinder",
-        "dispName": "웹컨텐츠",
-        "description": "웹컨텐츠",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": 5,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/NexNodeTree",
-        "contents": [
-          "/admin/contents"
-        ]
-      }
-    }
-  ],
-  [
-    152,
-    "/Home/Body/Main/Admin/Contents/ContentsEditor",
-    "",
-    "",
-    {
-      "1": {
-        "name": "ContentsEditor",
-        "dispName": "웹컨텐츠 편집",
-        "description": "웹컨텐츠 편집",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": 7,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/PXConfigNodeEditor",
-        "contents": [
-          "/admin/SelectedContents",
-          "/admin/element"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    160,
-    "/Home/Body/Main/Admin/Section",
-    "",
-    "",
-    {
-      "7": {
-        "name": "Section",
-        "dispName": "웹섹션",
-        "description": "웹섹션",
-        "type": "section",
-        "size": "1",
-        "direction": "row",
-        "route": "section"
-      }
-    }
-  ],
-  [
-    162,
-    "/Home/Body/Main/Admin/Section/Left",
-    "",
-    "",
-    {
-      "1": {
-        "name": "Left",
-        "dispName": "섹션 검색 & 편집",
-        "description": "섹션",
-        "type": "section",
-        "size": 7,
-        "direction": "column"
-      }
-    }
-  ],
-  [
-    164,
-    "/Home/Body/Main/Admin/Section/Left/Editor",
-    "",
-    "",
-    {
-      "0": {
-        "name": "Editor",
-        "dispName": "섹션 편집",
-        "description": "섹션 편집",
-        "type": "section",
-        "icon": "/config/section",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": "2",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/PXConfigNodeEditor",
-        "contents": [
-          "/admin/SelectedSection",
-          "/admin/contents"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    165,
-    "/Home/Body/Main/Admin/Section/Preview",
-    "",
-    "",
-    {
-      "2": {
-        "name": "Preview",
-        "dispName": "미리보기",
-        "description": "웹섹션 미리보기",
-        "type": "section",
-        "icon": "/config/section",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": 14,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/SectionViewer",
-        "contents": [
-          "/admin/section",
-          "/admin/contents"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": "",
-        "isRoute": ""
-      }
-    }
-  ],
-  [
-    170,
-    "/Home/Body/Main/Admin/Theme",
-    "",
-    "",
-    {
-      "8": {
-        "name": "Theme",
-        "dispName": "웹테마",
-        "description": "웹테마",
-        "type": "section",
-        "size": "1",
-        "direction": "row",
-        "route": "theme"
-      }
-    }
-  ],
-  [
-    171,
-    "/Home/Body/Main/Admin/Theme/ThemeFinder",
-    "",
-    "",
-    {
-      "0": {
-        "name": "ThemeFinder",
-        "dispName": "웹 테마",
-        "description": "웹테마",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": 4,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/NexNodeTree",
-        "contents": [
-          "/admin/theme"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    172,
-    "/Home/Body/Main/Admin/Theme/ThemeEditor",
-    "",
-    "",
-    {
-      "1": {
-        "name": "ThemeEditor",
-        "dispName": "웹 테마 편집",
-        "description": "웹테마 편집",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": 4,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/PXConfigNodeEditor",
-        "contents": [
-          "/admin/SelectedTheme"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    180,
-    "/Home/Body/Main/Admin/Web",
-    "",
-    "",
-    {
-      "9": {
-        "name": "Web",
-        "dispName": "WEB 사용자",
-        "description": "사용자",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "user",
-        "direction": "row",
-        "size": "1",
-        "padding": "",
-        "app-padding": "",
-        "applet": "",
-        "contents": "",
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    200,
-    "/Home/Body/Main/CBM/Dashboard",
-    "",
-    "",
-    {
-      "0": {
-        "name": "Dashboard",
-        "dispName": "CBM 대시보드",
-        "description": "CBM 대시보드 섹션",
-        "type": "section",
-        "size": "1",
-        "direction": "column",
-        "route": "dashboard"
-      }
-    }
-  ],
-  [
-    201,
-    "/Home/Body/Main/CBM/Dashboard/Top",
-    "",
-    "",
-    {
-      "0": {
-        "name": "Top",
-        "type": "section",
-        "size": "2",
-        "direction": "row"
-      }
-    }
-  ],
-  [
-    202,
-    "/Home/Body/Main/CBM/Dashboard/Bottom",
-    "",
-    "",
-    {
-      "1": {
-        "name": "Bottom",
-        "type": "section",
-        "size": "1",
-        "direction": "row"
-      }
-    }
-  ],
-  [
-    203,
-    "/Home/Body/Main/CBM/Dashboard/Top/Left",
-    "",
-    "",
-    {
-      "1": {
-        "name": "Left",
-        "type": "section",
-        "size": "1",
-        "direction": "column"
-      }
-    }
-  ],
-  [
-    204,
-    "/Home/Body/Main/CBM/Dashboard/Top/Right",
-    "",
-    "",
-    {
-      "0": {
-        "name": "Right",
-        "type": "section",
-        "size": "1",
-        "direction": "row"
-      }
-    }
-  ],
-  [
-    205,
-    "/Home/Body/Main/CBM/Dashboard/Top/Left/Top",
-    "",
-    "",
-    {
-      "1": {
-        "name": "Top",
-        "type": "section",
-        "size": "1",
-        "direction": "row"
-      }
-    }
-  ],
-  [
-    206,
-    "/Home/Body/Main/CBM/Dashboard/Top/Left/Bottom",
-    "",
-    "",
-    {
-      "0": {
-        "name": "Bottom",
-        "type": "section",
-        "size": "1",
-        "direction": "row"
-      }
-    }
-  ],
-  [
-    207,
-    "/Home/Body/Main/CBM/Dashboard/Top/Left/Top/LossPerLine",
-    "",
-    "",
-    {
-      "1": {
-        "name": "LossPerLine",
-        "dispName": "노선별 열화 현황",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": "4",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/status/NexStatus",
-        "contents": [
-          "/cbm/status/LossPerLine"
-        ]
-      }
-    }
-  ],
-  [
-    208,
-    "/Home/Body/Main/CBM/Dashboard/Top/Left/Top/LossHistoryPerLine",
-    "",
-    "",
-    {
-      "0": {
-        "name": "LossHistoryPerLine",
-        "dispName": "노선별 열화 이력",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": "8",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/chart/PXBaseChart",
-        "contents": [
-          "/cbm/history/LossHistoryPerLine"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    209,
-    "/Home/Body/Main/CBM/Dashboard/Top/Left/Bottom/TrainCountPerLine",
-    "",
-    "",
-    {
-      "0": {
-        "name": "TrainCountPerLine",
-        "dispName": "노선별 평성 수",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": "4",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/status/NexCount",
-        "contents": [
-          "/cbm/status/TrainCountPerLine"
-        ]
-      }
-    }
-  ],
-  [
-    210,
-    "/Home/Body/Main/CBM/Dashboard/Top/Left/Bottom/MaintenancePerLineHistory",
-    "",
-    "",
-    {
-      "1": {
-        "name": "MaintenancePerLineHistory",
-        "dispName": "노선별 유지보수 이력",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": "8",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/chart/PXLineChartApp",
-        "contents": [
-          "/cbm/history/MaintenancePerLineHistory"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    211,
-    "/Home/Body/Main/CBM/Dashboard/Top/Right/LossPerDevice",
-    "",
-    "",
-    {
-      "0": {
-        "name": "LossPerDevice",
-        "dispName": "장치별 열화 현황",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": "2",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/status/NexStatus",
-        "contents": [
-          "/cbm/status/LossPerDevice"
-        ]
-      }
-    }
-  ],
-  [
-    222,
-    "/Home/Body/Main/CBM/Dashboard/Top/Right/LossHistoryPerDevice",
-    "",
-    "",
-    {
-      "1": {
-        "name": "LossHistoryPerDevice",
-        "dispName": "장치별 열화 이력",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": "4",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/table/PXSearchingTable",
-        "contents": [
-          "/cbm/config/TrainPerLine"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    223,
-    "/Home/Body/Main/CBM/Dashboard/Bottom/RTMaintenanceInfo",
-    "",
-    "",
-    {
-      "0": {
-        "name": "RTMaintenanceInfo",
-        "dispName": "실시간 유지보수 정보",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": "1",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/table/PXSearchingTable",
-        "contents": [
-          "/cbm/event/RTMaintenanceInfo"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    224,
-    "/Home/Body/Main/CBM/Dashboard/Bottom/SystemEventInfo",
-    "",
-    "",
-    {
-      "1": {
-        "name": "SystemEventInfo",
-        "dispName": "시스템 이벤트 정보",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": "1",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/table/PXSearchingTable",
-        "contents": [
-          "/cbm/event/SystemEventInfo"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    225,
-    "/Home/Body/Main/Admin/Menu/Left",
-    "",
-    "",
-    {
-      "0": {
-        "name": "Left",
-        "dispName": "메뉴 검색",
-        "description": "",
-        "type": "section",
-        "icon": "/config/menu",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": 4,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/NexNodeTree",
-        "contents": [
-          "/admin/menu"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    226,
-    "/Home/Body/Main/Admin/Menu/edit-menu",
-    "",
-    "",
-    {
-      "1": {
-        "name": "edit-menu",
-        "dispName": "메뉴편집",
-        "description": "",
-        "type": "section",
-        "icon": "/config/menu",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "row",
-        "size": 6,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/PXConfigNodeEditor",
-        "contents": [
-          "/admin/SelectedMenu"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    230,
-    "/Home/Body/Main/Admin/System/Left",
-    "",
-    "",
-    {
-      "0": {
-        "name": "Left",
-        "dispName": "",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": 4,
-        "padding": "",
-        "applet": "",
-        "contents": ""
-      }
-    }
-  ],
-  [
-    231,
-    "/Home/Body/Main/Admin/System/Right",
-    "",
-    "",
-    {
-      "1": {
-        "name": "Right",
-        "dispName": "",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": 6,
-        "padding": "",
-        "app-padding": "",
-        "applet": "",
-        "contents": "",
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    233,
-    "/Home/Body/Main/Admin/System/Left/SystemFinder",
+    61,
+    "/Admin/Body/Main/System/SystemFinder",
     "",
     "",
     {
@@ -1127,222 +320,12 @@
     }
   ],
   [
-    238,
-    "/Home/Body/Main/Admin/Web/UserEditor",
+    62,
+    "/Admin/Body/Main/System/SystemEditor",
     "",
     "",
     {
       "1": {
-        "name": "UserEditor",
-        "dispName": "사용자 편집",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": 4,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/PXConfigNodeEditor",
-        "contents": [
-          "/admin/SelectedUser"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    245,
-    "/Home/Body/Main/Admin/Web/UserFinder",
-    "",
-    "",
-    {
-      "0": {
-        "name": "UserFinder",
-        "dispName": "사용자",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "size": 4,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/NexNodeTree",
-        "contents": [
-          "/admin/user"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    246,
-    "/Home/Body/Main/Admin/Web/UserJsonEditor",
-    "",
-    "",
-    {
-      "2": {
-        "name": "UserJsonEditor",
-        "dispName": "사용자 편집(JSON)",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "size": 4,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/PXJsonEditor",
-        "contents": [
-          "/admin/SelectedUser"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    248,
-    "/Home/Body/Main/sample",
-    "",
-    "",
-    {
-      "2": {
-        "name": "sample",
-        "dispName": "샘플 애플릿",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": true,
-        "route": "sample",
-        "size": "",
-        "padding": "",
-        "app-padding": "",
-        "applet": "/sample/NexSampleList",
-        "contents": [
-          "/cbm/status/LossPerLine",
-          "/cbm/status/LossPerDevice",
-          "/cbm/status/TrainCountPerLine"
-        ]
-      }
-    }
-  ],
-  [
-    254,
-    "/Home/Body/Main/sample/base",
-    "",
-    "",
-    {
-      "0": {
-        "name": "base",
-        "dispName": "기본",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "base",
-        "size": "",
-        "padding": "",
-        "app-padding": "",
-        "applet": "",
-        "contents": ""
-      }
-    }
-  ],
-  [
-    263,
-    "/Home/Head/new-section-205546",
-    "",
-    "",
-    {
-      "0": {
-        "name": "new-section-205546",
-        "dispName": "PX Builder",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "size": 9,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/head/PXHeadApplet",
-        "contents": [],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    264,
-    "/Home/Body/Main/Admin/Menu/edit-menu2",
-    "",
-    "",
-    {
-      "2": {
-        "name": "edit-menu2",
-        "dispName": "메뉴편집(JSON)",
-        "description": "",
-        "type": "section",
-        "icon": "/config/menu",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "size": 6,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/card/CardView",
-        "contents": [
-          "/admin/SelectedMenu"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    265,
-    "/Home/Body/Main/Admin/System/new-section-171706",
-    "",
-    "",
-    {
-      "2": {
-        "name": "new-section-171706",
-        "dispName": "",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": 6,
-        "padding": "",
-        "app-padding": "",
-        "applet": "",
-        "contents": "",
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    267,
-    "/Home/Body/Main/Admin/System/Right/SystemEditor",
-    "",
-    "",
-    {
-      "0": {
         "name": "SystemEditor",
         "dispName": "시스템 편집",
         "description": "",
@@ -1364,12 +347,12 @@
     }
   ],
   [
-    269,
-    "/Home/Body/Main/Admin/System/new-section-171706/SystemJsonEditor",
+    63,
+    "/Admin/Body/Main/System/SystemJsonEditor",
     "",
     "",
     {
-      "0": {
+      "2": {
         "name": "SystemJsonEditor",
         "dispName": "시스템 편집(JSON)",
         "description": "",
@@ -1391,8 +374,185 @@
     }
   ],
   [
-    270,
-    "/Home/Body/Main/Admin/Format/FormatJsonEditor",
+    70,
+    "/Admin/Body/Main/Storage",
+    "",
+    "",
+    {
+      "2": {
+        "name": "Storage",
+        "dispName": "데이터 저장소",
+        "description": "",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "storage",
+        "size": "",
+        "padding": "",
+        "app-padding": "",
+        "applet": "",
+        "contents": "",
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    71,
+    "/Admin/Body/Main/Storage/StorageFinder",
+    "",
+    "",
+    {
+      "0": {
+        "name": "StorageFinder",
+        "dispName": "데이터 저장소",
+        "description": "",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "size": 4,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/NexNodeTree",
+        "contents": [
+          "/admin/storage"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    72,
+    "/Admin/Body/Main/Storage/StorageEditor",
+    "",
+    "",
+    {
+      "1": {
+        "name": "StorageEditor",
+        "dispName": "데이터 저장소 편집",
+        "description": "",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "size": 6,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/PXConfigNodeEditor",
+        "contents": [
+          "/admin/SelectedStorage"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    73,
+    "/Admin/Body/Main/Storage/StorageJsonEditor",
+    "",
+    "",
+    {
+      "2": {
+        "name": "StorageJsonEditor",
+        "dispName": "데이터 저장소 편집(JSON)",
+        "description": "",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "size": 6,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/PXJsonEditor",
+        "contents": [
+          "/admin/SelectedStorage"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    100,
+    "/Admin/Body/Main/Format",
+    "",
+    "",
+    {
+      "3": {
+        "name": "Format",
+        "dispName": "Format",
+        "description": "Format Section",
+        "type": "section",
+        "size": "1",
+        "direction": "row",
+        "route": "format"
+      }
+    }
+  ],
+  [
+    101,
+    "/Admin/Body/Main/Format/FormatFinder",
+    "",
+    "",
+    {
+      "0": {
+        "name": "FormatFinder",
+        "dispName": "데이터 포맷",
+        "description": "데이터 포맷",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "row",
+        "size": 4,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/NexNodeTree",
+        "contents": [
+          "/admin/format"
+        ]
+      }
+    }
+  ],
+  [
+    102,
+    "/Admin/Body/Main/Format/FormatEditor",
+    "",
+    "",
+    {
+      "1": {
+        "name": "FormatEditor",
+        "dispName": "데이터 포맷 편집",
+        "description": "데이터 포맷 편집",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "row",
+        "size": 6,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/PXConfigNodeEditor",
+        "contents": [
+          "/admin/SelectedFormat"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    103,
+    "/Admin/Body/Main/Format/FormatJsonEditor",
     "",
     "",
     {
@@ -1418,22 +578,22 @@
     }
   ],
   [
-    271,
-    "/Home/Body/Main/Admin/Store/3",
+    110,
+    "/Admin/Body/Main/Store",
     "",
     "",
     {
-      "2": {
-        "name": "3",
-        "dispName": "3",
-        "description": "",
+      "4": {
+        "name": "Store",
+        "dispName": "보관정책",
+        "description": "데이터 보관정책",
         "type": "section",
         "icon": "",
         "color": "",
         "isRoutes": "",
-        "route": "",
-        "direction": "column",
-        "size": 6,
+        "route": "store",
+        "direction": "row",
+        "size": "1",
         "padding": "",
         "app-padding": "",
         "applet": "",
@@ -1444,8 +604,8 @@
     }
   ],
   [
-    272,
-    "/Home/Body/Main/Admin/Store/1/StoreFinder",
+    111,
+    "/Admin/Body/Main/Store/StoreFinder",
     "",
     "",
     {
@@ -1471,12 +631,12 @@
     }
   ],
   [
-    274,
-    "/Home/Body/Main/Admin/Store/2/StoreEditor",
+    112,
+    "/Admin/Body/Main/Store/StoreEditor",
     "",
     "",
     {
-      "0": {
+      "1": {
         "name": "StoreEditor",
         "dispName": "데이터 보관정책 편집",
         "description": "",
@@ -1499,12 +659,12 @@
     }
   ],
   [
-    276,
-    "/Home/Body/Main/Admin/Store/3/StoreJsonEditor",
+    113,
+    "/Admin/Body/Main/Store/StoreJsonEditor",
     "",
     "",
     {
-      "0": {
+      "2": {
         "name": "StoreJsonEditor",
         "dispName": "데이터 보관정책 편집(JSON)",
         "description": "",
@@ -1526,8 +686,131 @@
     }
   ],
   [
-    279,
-    "/Home/Body/Main/Admin/Element/Right/ElementFinder",
+    120,
+    "/Admin/Body/Main/Processor",
+    "",
+    "",
+    {
+      "10": {
+        "name": "Processor",
+        "dispName": "데이터 처리",
+        "description": "",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "processor",
+        "size": "",
+        "padding": "",
+        "app-padding": "",
+        "applet": "",
+        "contents": "",
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    121,
+    "/Admin/Body/Main/Processor/ProcessorFinder",
+    "",
+    "",
+    {
+      "0": {
+        "name": "ProcessorFinder",
+        "dispName": "데이터 처리",
+        "description": "",
+        "type": "section",
+        "icon": "/config/processor",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "size": 4,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/NexNodeTree",
+        "contents": [
+          "/admin/processor"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    122,
+    "/Admin/Body/Main/Processor/ProcessorEditor",
+    "",
+    "",
+    {
+      "1": {
+        "name": "ProcessorEditor",
+        "dispName": "데이터 처리 편집",
+        "description": "",
+        "type": "section",
+        "icon": "/config/processor",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "size": 6,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/PXConfigNodeEditor",
+        "contents": [
+          "/admin/SelectedProcessor"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    123,
+    "/Admin/Body/Main/Processor/ProcessorJsonEditor",
+    "",
+    "",
+    {
+      "2": {
+        "name": "ProcessorJsonEditor",
+        "dispName": "데이터 처리 편집(JSON)",
+        "description": "",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "size": 6,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/PXJsonEditor",
+        "contents": [
+          "/admin/SelectedProcessor"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    140,
+    "/Admin/Body/Main/Element",
+    "",
+    "",
+    {
+      "5": {
+        "name": "Element",
+        "dispName": "Element",
+        "description": "Element Section",
+        "type": "section",
+        "size": "1",
+        "direction": "row",
+        "route": "element"
+      }
+    }
+  ],
+  [
+    141,
+    "/Admin/Body/Main/Element/ElementFinder",
     "",
     "",
     {
@@ -1555,8 +838,8 @@
     }
   ],
   [
-    280,
-    "/Home/Body/Main/Admin/Element/Right/ElementEditor",
+    142,
+    "/Admin/Body/Main/Element/ElementEditor",
     "",
     "",
     {
@@ -1588,8 +871,8 @@
     }
   ],
   [
-    281,
-    "/Home/Body/Main/Admin/Element/Right/ElementJsonEditor",
+    143,
+    "/Admin/Body/Main/Element/ElementJsonEditor",
     "",
     "",
     {
@@ -1615,8 +898,80 @@
     }
   ],
   [
-    282,
-    "/Home/Body/Main/Admin/Contents/ContentsJsonEditor",
+    150,
+    "/Admin/Body/Main/Contents",
+    "",
+    "",
+    {
+      "6": {
+        "name": "Contents",
+        "dispName": "웹컨텐츠",
+        "description": "웹컨텐츠",
+        "type": "section",
+        "size": "1",
+        "direction": "row",
+        "route": "contents"
+      }
+    }
+  ],
+  [
+    151,
+    "/Admin/Body/Main/Contents/ContentsFinder",
+    "",
+    "",
+    {
+      "0": {
+        "name": "ContentsFinder",
+        "dispName": "웹컨텐츠",
+        "description": "웹컨텐츠",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "row",
+        "size": 5,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/NexNodeTree",
+        "contents": [
+          "/admin/contents"
+        ]
+      }
+    }
+  ],
+  [
+    152,
+    "/Admin/Body/Main/Contents/ContentsEditor",
+    "",
+    "",
+    {
+      "1": {
+        "name": "ContentsEditor",
+        "dispName": "웹컨텐츠 편집",
+        "description": "웹컨텐츠 편집",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "row",
+        "size": 7,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/PXConfigNodeEditor",
+        "contents": [
+          "/admin/SelectedContents",
+          "/admin/element"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    153,
+    "/Admin/Body/Main/Contents/ContentsJsonEditor",
     "",
     "",
     {
@@ -1642,8 +997,25 @@
     }
   ],
   [
-    283,
-    "/Home/Body/Main/Admin/Section/SectionFinder",
+    160,
+    "/Admin/Body/Main/Section",
+    "",
+    "",
+    {
+      "7": {
+        "name": "Section",
+        "dispName": "웹섹션",
+        "description": "웹섹션",
+        "type": "section",
+        "size": "1",
+        "direction": "row",
+        "route": "section"
+      }
+    }
+  ],
+  [
+    161,
+    "/Admin/Body/Main/Section/SectionFinder",
     "",
     "",
     {
@@ -1669,8 +1041,140 @@
     }
   ],
   [
-    284,
-    "/Home/Body/Main/Admin/Theme/ThemeJsonEditor",
+    162,
+    "/Admin/Body/Main/Section/SectionEditor",
+    "",
+    "",
+    {
+      "1": {
+        "name": "Editor",
+        "dispName": "섹션 편집",
+        "description": "섹션 편집",
+        "type": "section",
+        "icon": "/config/section",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "column",
+        "size": "2",
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/PXConfigNodeEditor",
+        "contents": [
+          "/admin/SelectedSection",
+          "/admin/contents"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    163,
+    "/Admin/Body/Main/Section/SectionViewer",
+    "",
+    "",
+    {
+      "2": {
+        "name": "SectionViewer",
+        "dispName": "미리보기",
+        "description": "웹섹션 미리보기",
+        "type": "section",
+        "icon": "/config/section",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "column",
+        "size": 14,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/SectionViewer",
+        "contents": [
+          "/admin/section",
+          "/admin/contents"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": "",
+        "isRoute": ""
+      }
+    }
+  ],
+  [
+    170,
+    "/Admin/Body/Main/Theme",
+    "",
+    "",
+    {
+      "8": {
+        "name": "Theme",
+        "dispName": "웹테마",
+        "description": "웹테마",
+        "type": "section",
+        "size": "1",
+        "direction": "row",
+        "route": "theme"
+      }
+    }
+  ],
+  [
+    171,
+    "/Admin/Body/Main/Theme/ThemeFinder",
+    "",
+    "",
+    {
+      "0": {
+        "name": "ThemeFinder",
+        "dispName": "웹 테마",
+        "description": "웹테마",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "row",
+        "size": 4,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/NexNodeTree",
+        "contents": [
+          "/admin/theme"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    172,
+    "/Admin/Body/Main/Theme/ThemeEditor",
+    "",
+    "",
+    {
+      "1": {
+        "name": "ThemeEditor",
+        "dispName": "웹 테마 편집",
+        "description": "웹테마 편집",
+        "type": "section",
+        "icon": "",
+        "color": "",
+        "isRoutes": "",
+        "route": "",
+        "direction": "row",
+        "size": 4,
+        "padding": "",
+        "app-padding": "",
+        "applet": "/admin/PXConfigNodeEditor",
+        "contents": [
+          "/admin/SelectedTheme"
+        ],
+        "visibleFeatures": "",
+        "refreshTime": ""
+      }
+    }
+  ],
+  [
+    173,
+    "/Admin/Body/Main/Theme/ThemeJsonEditor",
     "",
     "",
     {
@@ -1696,21 +1200,22 @@
     }
   ],
   [
-    285,
-    "/Home/Body/Main/Admin/Storage",
+    180,
+    "/Admin/Body/Main/User",
     "",
     "",
     {
-      "2": {
-        "name": "Storage",
-        "dispName": "데이터 저장소",
-        "description": "",
+      "9": {
+        "name": "User",
+        "dispName": "WEB 사용자",
+        "description": "사용자",
         "type": "section",
         "icon": "",
         "color": "",
         "isRoutes": "",
-        "route": "storage",
-        "size": "",
+        "route": "user",
+        "direction": "row",
+        "size": "1",
         "padding": "",
         "app-padding": "",
         "applet": "",
@@ -1721,14 +1226,14 @@
     }
   ],
   [
-    286,
-    "/Home/Body/Main/Admin/Storage/StorageFinder",
+    181,
+    "/Admin/Body/Main/User/UserFinder",
     "",
     "",
     {
       "0": {
-        "name": "StorageFinder",
-        "dispName": "데이터 저장소",
+        "name": "UserFinder",
+        "dispName": "사용자",
         "description": "",
         "type": "section",
         "icon": "",
@@ -1740,7 +1245,7 @@
         "app-padding": "",
         "applet": "/admin/NexNodeTree",
         "contents": [
-          "/admin/storage"
+          "/admin/user"
         ],
         "visibleFeatures": "",
         "refreshTime": ""
@@ -1748,26 +1253,27 @@
     }
   ],
   [
-    287,
-    "/Home/Body/Main/Admin/Storage/StorageEditor",
+    182,
+    "/Admin/Body/Main/User/UserEditor",
     "",
     "",
     {
       "1": {
-        "name": "StorageEditor",
-        "dispName": "데이터 저장소 편집",
+        "name": "UserEditor",
+        "dispName": "사용자 편집",
         "description": "",
         "type": "section",
         "icon": "",
         "color": "",
         "isRoutes": "",
         "route": "",
-        "size": 6,
+        "direction": "column",
+        "size": 4,
         "padding": "",
         "app-padding": "",
         "applet": "/admin/PXConfigNodeEditor",
         "contents": [
-          "/admin/SelectedStorage"
+          "/admin/SelectedUser"
         ],
         "visibleFeatures": "",
         "refreshTime": ""
@@ -1775,132 +1281,26 @@
     }
   ],
   [
-    288,
-    "/Home/Body/Main/Admin/Storage/StorageJsonEditor",
+    183,
+    "/Admin/Body/Main/User/UserJsonEditor",
     "",
     "",
     {
       "2": {
-        "name": "StorageJsonEditor",
-        "dispName": "데이터 저장소 편집(JSON)",
+        "name": "UserJsonEditor",
+        "dispName": "사용자 편집(JSON)",
         "description": "",
         "type": "section",
         "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "size": 6,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/PXJsonEditor",
-        "contents": [
-          "/admin/SelectedStorage"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    289,
-    "/Home/Body/Main/Admin/Processor",
-    "",
-    "",
-    {
-      "10": {
-        "name": "Processor",
-        "dispName": "데이터 처리",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "processor",
-        "size": "",
-        "padding": "",
-        "app-padding": "",
-        "applet": "",
-        "contents": "",
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    290,
-    "/Home/Body/Main/Admin/Processor/ProcessorFinder",
-    "",
-    "",
-    {
-      "0": {
-        "name": "ProcessorFinder",
-        "dispName": "데이터 처리",
-        "description": "",
-        "type": "section",
-        "icon": "/config/processor",
         "color": "",
         "isRoutes": "",
         "route": "",
         "size": 4,
         "padding": "",
         "app-padding": "",
-        "applet": "/admin/NexNodeTree",
-        "contents": [
-          "/admin/processor"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    291,
-    "/Home/Body/Main/Admin/Processor/ProcessorEditor",
-    "",
-    "",
-    {
-      "1": {
-        "name": "ProcessorEditor",
-        "dispName": "데이터 처리 편집",
-        "description": "",
-        "type": "section",
-        "icon": "/config/processor",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "size": 6,
-        "padding": "",
-        "app-padding": "",
-        "applet": "/admin/PXConfigNodeEditor",
-        "contents": [
-          "/admin/SelectedProcessor"
-        ],
-        "visibleFeatures": "",
-        "refreshTime": ""
-      }
-    }
-  ],
-  [
-    292,
-    "/Home/Body/Main/Admin/Processor/ProcessorJsonEditor",
-    "",
-    "",
-    {
-      "2": {
-        "name": "ProcessorJsonEditor",
-        "dispName": "데이터 처리 편집(JSON)",
-        "description": "",
-        "type": "section",
-        "icon": "",
-        "color": "",
-        "isRoutes": "",
-        "route": "",
-        "size": 6,
-        "padding": "",
-        "app-padding": "",
         "applet": "/admin/PXJsonEditor",
         "contents": [
-          "/admin/SelectedProcessor"
+          "/admin/SelectedUser"
         ],
         "visibleFeatures": "",
         "refreshTime": ""
