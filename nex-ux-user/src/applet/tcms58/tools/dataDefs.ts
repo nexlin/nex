@@ -40,6 +40,145 @@ const keysList = {
 
 }
 
+
+
+export const tcms58MonitoringDataDefs2: NexFieldDef[] = [
+    {
+        "offset": 0,
+        "name": "sequence counter",
+        "size": 2,
+        "description": "Sequence Counter(1~65535)",
+        "keys": [
+            "일련번호"
+        ]
+    },
+    {
+        "offset": 2,
+        "name": "년(YY)",
+        "size": 1,
+        "description": "(BCD) 00~99",
+        "encoding": "BCD",
+        "timeComponent": "년(YY)",
+        "keys": [
+            "time",
+            "year"
+        ]
+    },
+    {
+        "offset": 3,
+        "name": "월(MM)",
+        "size": 1,
+        "description": "(BCD) 01~12",
+        "encoding": "BCD",
+        "timeComponent": "월(MM)",
+        "keys": [
+            "time",
+            "month"
+        ]
+    },
+    {
+        "offset": 4,
+        "name": "일(DD)",
+        "size": 1,
+        "description": "(BCD) 01~31",
+        "encoding": "BCD",
+        "timeComponent": "일(DD)",
+        "keys": [
+            "time",
+            "day"
+        ]
+    },
+    {
+        "offset": 5,
+        "name": "시(hh)",
+        "size": 1,
+        "description": "(BCD) 00~23",
+        "encoding": "BCD",
+        "timeComponent": "시(hh)",
+        "keys": [
+            "time",
+            "hour"
+        ]
+    },
+    {
+        "offset": 6,
+        "name": "분(mm)",
+        "size": 1,
+        "description": "(BCD) 00~59",
+        "encoding": "BCD",
+        "timeComponent": "분(mm)",
+        "keys": [
+            "time",
+            "minute"
+        ]
+    },
+    {
+        "offset": 7,
+        "name": "초(ss)",
+        "size": 1,
+        "description": "(BCD) 00~59",
+        "encoding": "BCD",
+        "timeComponent": "초(ss)",
+        "keys": [
+            "time",
+            "second"
+        ]
+    },
+    {
+        "offset": 8,
+        "name": "호선차량조성정보",
+        "size": 1,
+        "description": "bit0~1(차량조성정보 1:8칸 2:6칸 ) bit4~7(호선정보 1:5호선 2: 8호선)",
+
+        "bitFields": [
+            {
+                "offset": 0,
+                "size": 2,
+                "keys": [
+                    "차량정보",
+                    "조성정보"
+                ],
+                "valueMap": {
+                    "1": 6,
+                    "2": 8
+                }
+            },
+            {
+                "offset": 4,
+                "size": 4,
+                "keys": [
+                    "차량정보",
+                    "호선정보"
+                ],
+                "valueMap": {
+                    "1": "5호선",
+                    "2": "8호선"
+                }
+            }
+        ]
+    },
+    {
+        "offset": 10,
+        "name": "열차 번호(XXXX)",
+        "size": 2,
+        "description": "BCD포맷 4자리 숫자",
+        "encoding": "BCD",
+        "keys": [
+            "train_num"
+        ]
+    },
+    {
+        "offset": 12,
+        "name": "편성번호",
+        "size": 1,
+        "description": "BCD포맷 2자리 숫자",
+        "encoding": "BCD",
+        "keys": [
+            "train"
+        ]
+    },
+]
+
 export const tcms58MonitoringDataDefs: NexFieldDef[] = [
     {
         "offset": 0,
@@ -127,9 +266,7 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "name": "호선차량조성정보",
         "size": 1,
         "description": "bit0~1(차량조성정보 1:8칸 2:6칸 ) bit4~7(호선정보 1:5호선 2: 8호선)",
-        "keys": [
-            "호선차량조성정보"
-        ],
+
         "bitFields": [
             {
                 "offset": 0,
@@ -635,78 +772,75 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "name": "화재감지",
         "size": 2,
         "description": "bit0(0호차) ~ bit9(9호차)",
-        "keys": [
-            "화재감지"
-        ],
         "bitFields": [
             {
                 "offset": 0,
                 "size": 1,
                 "keys": [
-                    "1호차 화재감지"
+                    "1호차", "화재감지"
                 ]
             },
             {
                 "offset": 1,
                 "size": 1,
                 "keys": [
-                    "2호차 화재감지"
+                    "2호차", "화재감지"
                 ]
             },
             {
                 "offset": 2,
                 "size": 1,
                 "keys": [
-                    "3호차 화재감지"
+                    "3호차", "화재감지"
                 ]
             },
             {
                 "offset": 3,
                 "size": 1,
                 "keys": [
-                    "4호차 화재감지"
+                    "4호차", "화재감지"
                 ]
             },
             {
                 "offset": 4,
                 "size": 1,
                 "keys": [
-                    "5호차 화재감지"
+                    "5호차", "화재감지"
                 ]
             },
             {
                 "offset": 5,
                 "size": 1,
                 "keys": [
-                    "6호차 화재감지"
+                    "6호차", "화재감지"
                 ]
             },
             {
                 "offset": 6,
                 "size": 1,
                 "keys": [
-                    "7호차 화재감지"
+                    "7호차", "화재감지"
                 ]
             },
             {
                 "offset": 7,
                 "size": 1,
                 "keys": [
-                    "0호차 화재감지"
+                    "0호차", "화재감지"
                 ]
             },
             {
                 "offset": 14,
                 "size": 1,
                 "keys": [
-                    "1호차 운전실 화재감지"
+                    "1호차", "운전실", "화재감지"
                 ]
             },
             {
                 "offset": 15,
                 "size": 1,
                 "keys": [
-                    "0호차 운전실 화재감지"
+                    "0호차", "운전실", "화재감지"
                 ]
             }
         ]
@@ -716,65 +850,61 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "name": "1번 비상인터폰 감지",
         "size": 1,
         "description": "bit0(0호차) ~ bit9(9호차)",
-        "keys": [
-            "비상인터폰",
-            "1번"
-        ],
         "bitFields": [
             {
                 "offset": 0,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 1번 감지"
+                    "1호차", "비상인터폰", "1번", "감지"
                 ]
             },
             {
                 "offset": 1,
                 "size": 1,
                 "keys": [
-                    "2호차 비상인터폰 1번 감지"
+                    "2호차", "비상인터폰", "1번", "감지"
                 ]
             },
             {
                 "offset": 2,
                 "size": 1,
                 "keys": [
-                    "3호차 비상인터폰 1번 감지"
+                    "3호차", "비상인터폰", "1번", "감지"
                 ]
             },
             {
                 "offset": 3,
                 "size": 1,
                 "keys": [
-                    "4호차 비상인터폰 1번 감지"
+                    "4호차", "비상인터폰", "1번", "감지"
                 ]
             },
             {
                 "offset": 4,
                 "size": 1,
                 "keys": [
-                    "5호차 비상인터폰 1번 감지"
+                    "5호차", "비상인터폰", "1번", "감지"
                 ]
             },
             {
                 "offset": 5,
                 "size": 1,
                 "keys": [
-                    "6호차 비상인터폰 1번 감지"
+                    "6호차", "비상인터폰", "1번", "감지"
                 ]
             },
             {
                 "offset": 6,
                 "size": 1,
                 "keys": [
-                    "7호차 비상인터폰 1번 감지"
+                    "7호차", "비상인터폰", "1번", "감지"
                 ]
             },
             {
                 "offset": 7,
                 "size": 1,
                 "keys": [
-                    "0호차 비상인터폰 1번 감지"
+                    "0호차", "비상인터폰", "1번", "감지"
                 ]
             }
         ]
@@ -784,65 +914,61 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "name": "1번 비상인터폰 통화중",
         "size": 1,
         "description": "bit0(0호차) ~ bit9(9호차)",
-        "keys": [
-            "비상인터폰",
-            "1번"
-        ],
         "bitFields": [
             {
                 "offset": 0,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 1번 통화중"
+                    "1호차", "비상인터폰", "1번", "통화중"
                 ]
             },
             {
                 "offset": 1,
                 "size": 1,
                 "keys": [
-                    "2호차 비상인터폰 1번 통화중"
+                    "2호차", "비상인터폰", "1번", "통화중"
                 ]
             },
             {
                 "offset": 2,
                 "size": 1,
                 "keys": [
-                    "3호차 비상인터폰 1번 통화중"
+                    "3호차", "비상인터폰", "1번", "통화중"
                 ]
             },
             {
                 "offset": 3,
                 "size": 1,
                 "keys": [
-                    "4호차 비상인터폰 1번 통화중"
+                    "4호차", "비상인터폰", "1번", "통화중"
                 ]
             },
             {
                 "offset": 4,
                 "size": 1,
                 "keys": [
-                    "5호차 비상인터폰 1번 통화중"
+                    "5호차", "비상인터폰", "1번", "통화중"
                 ]
             },
             {
                 "offset": 5,
                 "size": 1,
                 "keys": [
-                    "6호차 비상인터폰 1번 통화중"
+                    "6호차", "비상인터폰", "1번", "통화중"
                 ]
             },
             {
                 "offset": 6,
                 "size": 1,
                 "keys": [
-                    "7호차 비상인터폰 1번 통화중"
+                    "7호차", "비상인터폰", "1번", "통화중"
                 ]
             },
             {
                 "offset": 7,
                 "size": 1,
                 "keys": [
-                    "0호차 비상인터폰 1번 통화중"
+                    "0호차", "비상인터폰", "1번", "통화중"
                 ]
             }
         ]
@@ -852,65 +978,61 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "name": "2번 비상인터폰 감지",
         "size": 1,
         "description": "bit0(0호차) ~ bit9(9호차)",
-        "keys": [
-            "비상인터폰",
-            "2번"
-        ],
         "bitFields": [
             {
                 "offset": 0,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 2번 감지"
+                    "1호차", "비상인터폰", "2번", "감지"
                 ]
             },
             {
                 "offset": 1,
                 "size": 1,
                 "keys": [
-                    "2호차 비상인터폰 2번 감지"
+                    "2호차", "비상인터폰", "2번", "감지"
                 ]
             },
             {
                 "offset": 2,
                 "size": 1,
                 "keys": [
-                    "3호차 비상인터폰 2번 감지"
+                    "3호차", "비상인터폰", "2번", "감지"
                 ]
             },
             {
                 "offset": 3,
                 "size": 1,
                 "keys": [
-                    "4호차 비상인터폰 2번 감지"
+                    "4호차", "비상인터폰", "2번", "감지"
                 ]
             },
             {
                 "offset": 4,
                 "size": 1,
                 "keys": [
-                    "5호차 비상인터폰 2번 감지"
+                    "5호차", "비상인터폰", "2번", "감지"
                 ]
             },
             {
                 "offset": 5,
                 "size": 1,
                 "keys": [
-                    "6호차 비상인터폰 2번 감지"
+                    "6호차", "비상인터폰", "2번", "감지"
                 ]
             },
             {
                 "offset": 6,
                 "size": 1,
                 "keys": [
-                    "7호차 비상인터폰 2번 감지"
+                    "7호차", "비상인터폰", "2번", "감지"
                 ]
             },
             {
                 "offset": 7,
                 "size": 1,
                 "keys": [
-                    "0호차 비상인터폰 2번 감지"
+                    "0호차", "비상인터폰", "2번", "감지"
                 ]
             }
         ]
@@ -920,65 +1042,61 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "name": "2번 비상인터폰 통화중",
         "size": 1,
         "description": "bit0(0호차) ~ bit9(9호차)",
-        "keys": [
-            "비상인터폰",
-            "2번"
-        ],
         "bitFields": [
             {
                 "offset": 0,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 2번 통화중"
+                    "1호차", "비상인터폰", "2번", "통화중"
                 ]
             },
             {
                 "offset": 1,
                 "size": 1,
                 "keys": [
-                    "2호차 비상인터폰 2번 통화중"
+                    "2호차", "비상인터폰", "2번", "통화중"
                 ]
             },
             {
                 "offset": 2,
                 "size": 1,
                 "keys": [
-                    "3호차 비상인터폰 2번 통화중"
+                    "3호차", "비상인터폰", "2번", "통화중"
                 ]
             },
             {
                 "offset": 3,
                 "size": 1,
                 "keys": [
-                    "4호차 비상인터폰 2번 통화중"
+                    "4호차", "비상인터폰", "2번", "통화중"
                 ]
             },
             {
                 "offset": 4,
                 "size": 1,
                 "keys": [
-                    "5호차 비상인터폰 2번 통화중"
+                    "5호차", "비상인터폰", "2번", "통화중"
                 ]
             },
             {
                 "offset": 5,
                 "size": 1,
                 "keys": [
-                    "6호차 비상인터폰 2번 통화중"
+                    "6호차", "비상인터폰", "2번", "통화중"
                 ]
             },
             {
                 "offset": 6,
                 "size": 1,
                 "keys": [
-                    "7호차 비상인터폰 2번 통화중"
+                    "7호차", "비상인터폰", "2번", "통화중"
                 ]
             },
             {
                 "offset": 7,
                 "size": 1,
                 "keys": [
-                    "0호차 비상인터폰 2번 통화중"
+                    "0호차", "비상인터폰", "2번", "통화중"
                 ]
             }
         ]
@@ -988,65 +1106,61 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "name": "내부비상핸들 감지",
         "size": 1,
         "description": "bit0(0호차) ~ bit9(9호차)",
-        "keys": [
-            "내부비상핸들",
-            "감지"
-        ],
         "bitFields": [
             {
                 "offset": 0,
                 "size": 1,
                 "keys": [
-                    "1호차 내부비상핸들 감지"
+                    "1호차", "내부비상핸들", "감지"
                 ]
             },
             {
                 "offset": 1,
                 "size": 1,
                 "keys": [
-                    "2호차 내부비상핸들 감지"
+                    "2호차", "내부비상핸들", "감지"
                 ]
             },
             {
                 "offset": 2,
                 "size": 1,
                 "keys": [
-                    "3호차 내부비상핸들 감지"
+                    "3호차", "내부비상핸들", "감지"
                 ]
             },
             {
                 "offset": 3,
                 "size": 1,
                 "keys": [
-                    "4호차 내부비상핸들 감지"
+                    "4호차", "내부비상핸들", "감지"
                 ]
             },
             {
                 "offset": 4,
                 "size": 1,
                 "keys": [
-                    "5호차 내부비상핸들 감지"
+                    "5호차", "내부비상핸들", "감지"
                 ]
             },
             {
                 "offset": 5,
                 "size": 1,
                 "keys": [
-                    "6호차 내부비상핸들 감지"
+                    "6호차", "내부비상핸들", "감지"
                 ]
             },
             {
                 "offset": 6,
                 "size": 1,
                 "keys": [
-                    "7호차 내부비상핸들 감지"
+                    "7호차", "내부비상핸들", "감지"
                 ]
             },
             {
                 "offset": 7,
                 "size": 1,
                 "keys": [
-                    "0호차 내부비상핸들 감지"
+                    "0호차", "내부비상핸들", "감지"
                 ]
             }
         ]
@@ -1509,9 +1623,6 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "name": "온도센서 이상",
         "size": 1,
         "description": "bit0(온도센서 이상)",
-        "keys": [
-            "온도센서 이상"
-        ],
         "bitFields": [
             {
                 "offset": 0,
@@ -1528,7 +1639,7 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "size": 1,
         "description": "운전실 온도(℃)",
         "keys": [
-            "온도센서 이상"
+            "운전실 온도"
         ]
     },
     {
@@ -6240,56 +6351,56 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
                 "offset": 0,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 1 고장"
+                    "1번", "고장상태", "고장"
                 ]
             },
             {
                 "offset": 1,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 1 통신이상"
+                    "1번", "고장상태", "통신이상"
                 ]
             },
             {
                 "offset": 2,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 1 통화"
+                    "1번", "고장상태", "통화"
                 ]
             },
             {
                 "offset": 3,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 1 호출"
+                    "1번", "고장상태", "호출"
                 ]
             },
             {
                 "offset": 4,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 2 고장"
+                    "2번", "고장상태", "고장"
                 ]
             },
             {
                 "offset": 5,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 2 통신이상"
+                    "2번", "고장상태", "통신이상"
                 ]
             },
             {
                 "offset": 6,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 2 통화"
+                    "2번", "고장상태", "통화"
                 ]
             },
             {
                 "offset": 7,
                 "size": 1,
                 "keys": [
-                    "1호차 비상인터폰 2 호출"
+                    "2번", "고장상태", "호출"
                 ]
             }
         ]
@@ -9006,7 +9117,8 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "description": "bit0(자동) bit1(OFF) bit2(전난방) bit3(2/3난방) bit4(1/3난방) bit5(U1 전냉방) bit6(U1 반냉방) bit7(U2 전냉방)",
         "keys": [
             "1호차",
-            "냉난방장치"
+            "냉난방장치",
+            "상태"
         ],
         "bitFields": [
             {
@@ -9237,7 +9349,8 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "description": "bit0(자동) bit1(OFF) bit2(전난방) bit3(2/3난방) bit4(1/3난방) bit5(U1 전냉방) bit6(U1 반냉방) bit7(U2 전냉방)",
         "keys": [
             "2호차",
-            "냉난방장치"
+            "냉난방장치",
+            "상태"
         ],
         "bitFields": [
             {
@@ -9422,31 +9535,22 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "bitFields": [
             {
                 "offset": 0,
-                "size": 1,
+                "size": 4,
                 "keys": [
                     "설정모드"
-                ]
-            },
-            {
-                "offset": 1,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 2,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 3,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
+                ],
+                valueMap: {
+                    "1": "시험",
+                    "2": "전냉방",
+                    "3": "반냉방",
+                    "4": "환기",
+                    "5": "OFF",
+                    "6": "자동",
+                    "7": "1/3난방",
+                    "8": "2/3난방",
+                    "9": "U1 전냉방",
+                    //"*": "OFF" // 정의되지 않은 경우 default 값으로 OFF 보완 필요     
+                }
             }
         ]
     },
@@ -9468,7 +9572,8 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "description": "bit0(자동) bit1(OFF) bit2(전난방) bit3(2/3난방) bit4(1/3난방) bit5(U1 전냉방) bit6(U1 반냉방) bit7(U2 전냉방)",
         "keys": [
             "3호차",
-            "냉난방장치"
+            "냉난방장치",
+            "상태"
         ],
         "bitFields": [
             {
@@ -9653,31 +9758,22 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "bitFields": [
             {
                 "offset": 0,
-                "size": 1,
+                "size": 4,
                 "keys": [
                     "설정모드"
-                ]
-            },
-            {
-                "offset": 1,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 2,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 3,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
+                ],
+                valueMap: {
+                    "1": "시험",
+                    "2": "전냉방",
+                    "3": "반냉방",
+                    "4": "환기",
+                    "5": "OFF",
+                    "6": "자동",
+                    "7": "1/3난방",
+                    "8": "2/3난방",
+                    "9": "U1 전냉방",
+                    //"*": "OFF" // 정의되지 않은 경우 default 값으로 OFF 보완 필요     
+                }
             }
         ]
     },
@@ -9699,7 +9795,8 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "description": "bit0(자동) bit1(OFF) bit2(전난방) bit3(2/3난방) bit4(1/3난방) bit5(U1 전냉방) bit6(U1 반냉방) bit7(U2 전냉방)",
         "keys": [
             "4호차",
-            "냉난방장치"
+            "냉난방장치",
+            "상태"
         ],
         "bitFields": [
             {
@@ -9884,31 +9981,22 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "bitFields": [
             {
                 "offset": 0,
-                "size": 1,
+                "size": 4,
                 "keys": [
                     "설정모드"
-                ]
-            },
-            {
-                "offset": 1,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 2,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 3,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
+                ],
+                valueMap: {
+                    "1": "시험",
+                    "2": "전냉방",
+                    "3": "반냉방",
+                    "4": "환기",
+                    "5": "OFF",
+                    "6": "자동",
+                    "7": "1/3난방",
+                    "8": "2/3난방",
+                    "9": "U1 전냉방",
+                    //"*": "OFF" // 정의되지 않은 경우 default 값으로 OFF 보완 필요     
+                }
             }
         ]
     },
@@ -9930,7 +10018,8 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "description": "bit0(자동) bit1(OFF) bit2(전난방) bit3(2/3난방) bit4(1/3난방) bit5(U1 전냉방) bit6(U1 반냉방) bit7(U2 전냉방)",
         "keys": [
             "5호차",
-            "냉난방장치"
+            "냉난방장치",
+            "상태"
         ],
         "bitFields": [
             {
@@ -10115,31 +10204,22 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "bitFields": [
             {
                 "offset": 0,
-                "size": 1,
+                "size": 4,
                 "keys": [
                     "설정모드"
-                ]
-            },
-            {
-                "offset": 1,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 2,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 3,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
+                ],
+                valueMap: {
+                    "1": "시험",
+                    "2": "전냉방",
+                    "3": "반냉방",
+                    "4": "환기",
+                    "5": "OFF",
+                    "6": "자동",
+                    "7": "1/3난방",
+                    "8": "2/3난방",
+                    "9": "U1 전냉방",
+                    //"*": "OFF" // 정의되지 않은 경우 default 값으로 OFF 보완 필요     
+                }
             }
         ]
     },
@@ -10161,7 +10241,8 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "description": "bit0(자동) bit1(OFF) bit2(전난방) bit3(2/3난방) bit4(1/3난방) bit5(U1 전냉방) bit6(U1 반냉방) bit7(U2 전냉방)",
         "keys": [
             "6호차",
-            "냉난방장치"
+            "냉난방장치",
+            "상태"
         ],
         "bitFields": [
             {
@@ -10346,31 +10427,22 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "bitFields": [
             {
                 "offset": 0,
-                "size": 1,
+                "size": 4,
                 "keys": [
                     "설정모드"
-                ]
-            },
-            {
-                "offset": 1,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 2,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 3,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
+                ],
+                valueMap: {
+                    "1": "시험",
+                    "2": "전냉방",
+                    "3": "반냉방",
+                    "4": "환기",
+                    "5": "OFF",
+                    "6": "자동",
+                    "7": "1/3난방",
+                    "8": "2/3난방",
+                    "9": "U1 전냉방",
+                    //"*": "OFF" // 정의되지 않은 경우 default 값으로 OFF 보완 필요     
+                }
             }
         ]
     },
@@ -10392,7 +10464,8 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "description": "bit0(자동) bit1(OFF) bit2(전난방) bit3(2/3난방) bit4(1/3난방) bit5(U1 전냉방) bit6(U1 반냉방) bit7(U2 전냉방)",
         "keys": [
             "7호차",
-            "냉난방장치"
+            "냉난방장치",
+            "상태"
         ],
         "bitFields": [
             {
@@ -10577,31 +10650,22 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "bitFields": [
             {
                 "offset": 0,
-                "size": 1,
+                "size": 4,
                 "keys": [
                     "설정모드"
-                ]
-            },
-            {
-                "offset": 1,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 2,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 3,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
+                ],
+                valueMap: {
+                    "1": "시험",
+                    "2": "전냉방",
+                    "3": "반냉방",
+                    "4": "환기",
+                    "5": "OFF",
+                    "6": "자동",
+                    "7": "1/3난방",
+                    "8": "2/3난방",
+                    "9": "U1 전냉방",
+                    //"*": "OFF" // 정의되지 않은 경우 default 값으로 OFF 보완 필요     
+                }
             }
         ]
     },
@@ -10623,7 +10687,8 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "description": "bit0(자동) bit1(OFF) bit2(전난방) bit3(2/3난방) bit4(1/3난방) bit5(U1 전냉방) bit6(U1 반냉방) bit7(U2 전냉방)",
         "keys": [
             "0호차",
-            "냉난방장치"
+            "냉난방장치",
+            "상태"
         ],
         "bitFields": [
             {
@@ -10808,31 +10873,22 @@ export const tcms58MonitoringDataDefs: NexFieldDef[] = [
         "bitFields": [
             {
                 "offset": 0,
-                "size": 1,
+                "size": 4,
                 "keys": [
                     "설정모드"
-                ]
-            },
-            {
-                "offset": 1,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 2,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
-            },
-            {
-                "offset": 3,
-                "size": 1,
-                "keys": [
-                    "설정모드"
-                ]
+                ],
+                valueMap: {
+                    "1": "시험",
+                    "2": "전냉방",
+                    "3": "반냉방",
+                    "4": "환기",
+                    "5": "OFF",
+                    "6": "자동",
+                    "7": "1/3난방",
+                    "8": "2/3난방",
+                    "9": "U1 전냉방",
+                    //"*": "OFF" // 정의되지 않은 경우 default 값으로 OFF 보완 필요     
+                }
             }
         ]
     },

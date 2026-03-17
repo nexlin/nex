@@ -1,6 +1,23 @@
 import { NexFieldDef } from "./dataDefs";
 
 /**
+ * 두 객체를 재귀적으로 깊은 병합합니다.
+ */
+function deepMerge(target: any, source: any): any {
+    for (const key of Object.keys(source)) {
+        if (
+            source[key] && typeof source[key] === 'object' && !Array.isArray(source[key]) &&
+            target[key] && typeof target[key] === 'object' && !Array.isArray(target[key])
+        ) {
+            deepMerge(target[key], source[key]);
+        } else {
+            target[key] = source[key];
+        }
+    }
+    return target;
+}
+
+/**
  * BCD(Binary-Coded Decimal) 바이트 값을 정수로 변환합니다.
  */
 function bcdToDec(bcdValue: number, size: number): number {
@@ -47,15 +64,7 @@ export function convertTrainBinaryToJson(binaryData: Uint8Array, dataDefs: NexFi
             }
 
             // 데이터 속성 디코딩
-            if (def.bitFlags && Object.keys(def.bitFlags).length > 0) {
-                const flagsObj: Record<string, number | boolean> = {};
-                for (const bitStr of Object.keys(def.bitFlags)) {
-                    const bitNum = parseInt(bitStr, 10);
-                    const flagName = def.bitFlags[bitNum];
-                    flagsObj[flagName] = (rawValue & (1 << bitNum)) !== 0 ? 1 : 0;
-                }
-                value = flagsObj;
-            } else if (def.bitFields && def.bitFields.length > 0) {
+            if (def.bitFields && def.bitFields.length > 0) {
                 const bitFieldObj: any = {};
                 for (const bf of def.bitFields) {
                     const mask = (1 << bf.size) - 1;
@@ -86,7 +95,6 @@ export function convertTrainBinaryToJson(binaryData: Uint8Array, dataDefs: NexFi
                 } else if (def.encoding === "BCD") {
                     const dec = bcdToDec(rawValue, def.size);
                     if (def.concat) {
-                        // BCD를 concat 할 때는 0을 패딩하여 문자열로 유지합니다.
                         value = String(dec).padStart(def.size * 2, '0');
                     } else {
                         value = dec;
@@ -99,19 +107,30 @@ export function convertTrainBinaryToJson(binaryData: Uint8Array, dataDefs: NexFi
             // 시간정보 조립을 위한 저장
             if (def.timeComponent) {
                 timeParts[def.timeComponent] = value;
-                continue; // 배열 추가 안함
+                continue;
+            }
+
+            // keys 가 정의되지 않은 경우: bitFields의 keys가 직접 result에 병합됨
+            if (!def.keys || def.keys.length === 0) {
+                if (typeof value === 'object' && !Array.isArray(value)) {
+                    // bitFields로부터 생성된 객체를 result에 깊은 병합
+                    deepMerge(result, value);
+                }
+                // keys가 없고 bitFields도 아닌 경우는 name을 키로 사용
+                else {
+                    result[def.name] = value;
+                }
+                continue;
             }
 
             // 계층화 트리 자동 생성 (keys 배열 사용)
             let currentObj = result;
             
-            // 마지막 키를 제외한 모든 상위 계층에 대해 객체를 초기화하며 이동
             for (let i = 0; i < def.keys.length - 1; i++) {
                 const k = def.keys[i];
                 if (!currentObj[k]) {
                     currentObj[k] = {};
                 } else if (typeof currentObj[k] !== 'object' || Array.isArray(currentObj[k])) {
-                    // 단일 값이 이미 존재한다면 객체로 감싸고 "_old"로 우회
                     const oldVal = currentObj[k];
                     currentObj[k] = { "_old": oldVal };
                 }
@@ -120,7 +139,6 @@ export function convertTrainBinaryToJson(binaryData: Uint8Array, dataDefs: NexFi
 
             const lastKey = def.keys[def.keys.length - 1];
 
-            // 데이터의 concat 플래그 여부에 따라 마지막 깊이 값 할당 방식 결정
             if (def.concat) {
                 if (currentObj[lastKey] === undefined) {
                     currentObj[lastKey] = "";
@@ -131,10 +149,17 @@ export function convertTrainBinaryToJson(binaryData: Uint8Array, dataDefs: NexFi
                 currentObj[lastKey] += String(value);
             } else {
                 if (Object.prototype.hasOwnProperty.call(currentObj, lastKey)) {
-                    if (Array.isArray(currentObj[lastKey])) {
-                        currentObj[lastKey].push(value);
+                    const existing = currentObj[lastKey];
+                    // 두 값이 모두 일반 객체이면 깊은 병합
+                    if (
+                        existing && typeof existing === 'object' && !Array.isArray(existing) &&
+                        value && typeof value === 'object' && !Array.isArray(value)
+                    ) {
+                        deepMerge(existing, value);
+                    } else if (Array.isArray(existing)) {
+                        existing.push(value);
                     } else {
-                        currentObj[lastKey] = [currentObj[lastKey], value];
+                        currentObj[lastKey] = [existing, value];
                     }
                 } else {
                     currentObj[lastKey] = value;
