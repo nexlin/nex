@@ -55,6 +55,27 @@ export function convertTrainBinaryToJson(binaryData: Uint8Array, dataDefs: NexFi
                     flagsObj[flagName] = (rawValue & (1 << bitNum)) !== 0 ? 1 : 0;
                 }
                 value = flagsObj;
+            } else if (def.bitFields && def.bitFields.length > 0) {
+                const bitFieldObj: any = {};
+                for (const bf of def.bitFields) {
+                    const mask = (1 << bf.size) - 1;
+                    const extracted = (rawValue >> bf.offset) & mask;
+                    const mappedValue = (bf.valueMap && bf.valueMap[extracted] !== undefined) 
+                        ? bf.valueMap[extracted] 
+                        : extracted;
+                    
+                    let bfCurrent = bitFieldObj;
+                    for (let j = 0; j < bf.keys.length; j++) {
+                        const bKey = bf.keys[j];
+                        if (j === bf.keys.length - 1) {
+                            bfCurrent[bKey] = mappedValue;
+                        } else {
+                            if (!bfCurrent[bKey]) bfCurrent[bKey] = {};
+                            bfCurrent = bfCurrent[bKey];
+                        }
+                    }
+                }
+                value = bitFieldObj;
             } else {
                 if (def.encoding === "ASCII") {
                     if (rawValue >= 32 && rawValue <= 126) {

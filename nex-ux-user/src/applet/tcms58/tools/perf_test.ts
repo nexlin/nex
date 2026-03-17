@@ -2,7 +2,7 @@ import { tcms58MonitoringDataDefs } from './dataDefs';
 import { convertTrainBinaryToJson } from './dataConv';
 
 const ITERATIONS = 1000;
-const BUFFER_SIZE = 567;
+const BUFFER_SIZE = 520;
 
 // 1. 샘플 데이터 1000개 미리 생성 (테스트 시각 측정에서 생성 시간은 제외하기 위함)
 console.log(`Generating ${ITERATIONS} sample buffers of ${BUFFER_SIZE} bytes...`);

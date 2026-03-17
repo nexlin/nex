@@ -2,7 +2,7 @@ import { tcms58MonitoringDataDefs } from './dataDefs';
 import { convertTrainBinaryToJson } from './dataConv';
 import * as fs from 'fs';
 
-const buffer = new Uint8Array(567);
+const buffer = new Uint8Array(520);
 const view = new DataView(buffer.buffer);
 
 for (let i = 0; i < buffer.length; i++) {
@@ -10,7 +10,7 @@ for (let i = 0; i < buffer.length; i++) {
 }
 
 view.setUint16(0, 4660, false);
-view.setUint16(8, 85, false);
+view.setUint8(8, 18); // 호선차량조성정보 모의 (0001 0010: bit4~7은 1, bit0~1은 2)
 view.setUint16(10, 120, false);
 view.setUint8(44, 50);
 view.setUint8(45, 30);
